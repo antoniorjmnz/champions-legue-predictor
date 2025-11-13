@@ -31,21 +31,21 @@ def generar_rivales(equipos_dict, max_iter=10000):
     for i, bombo in enumerate(bombos):
         print(f"Bombo {i+1}: {bombo}")
 
-    print("\nGenerando rivales con metaheurística...")
+    print("\nGenerando rivales...")
     rivales = generar_rivales_metaheuristica(
     lista_equipos,
     equipos_dict,
     bombos,
-    iteraciones=500000,
+    iteraciones=5000,
     max_mismo_pais=1 
     )
 
 
     if rivales:
-        print("✅ Rivales generados correctamente.")
+        print("Rivales generados correctamente.")
         imprimir_rivales(rivales, equipos_dict)
     else:
-        print("❌ No se pudo generar rivales válidos.")
+        print("No se pudo generar rivales válidos.")
 
     return rivales
 
