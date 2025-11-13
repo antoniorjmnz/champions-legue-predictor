@@ -1,108 +1,56 @@
 import random
+from metaheuristica_rivales import generar_rivales_metaheuristica
+from collections import Counter
 
-def generar_calendario(equipos_dict):
-    
-    # 4 bombos vacíos de lista de listas
-    lista_bombo = [[] for _ in range(4)]
-    # Lista de los nombres de los equipos
+def generar_bombos(lista_equipos, num_bombos=4):
+    bombos = [[] for _ in range(num_bombos)]
+    equipos_disponibles = lista_equipos.copy()
+    random.shuffle(equipos_disponibles)
+    idx = 0
+    while equipos_disponibles:
+        equipo = equipos_disponibles.pop()
+        bombos[idx % num_bombos].append(equipo)
+        idx += 1
+    return bombos
+
+def imprimir_rivales(rivales, equipos_dict):
+    print("\n===== RIVALES POR EQUIPO =====\n")
+    for eq in sorted(rivales.keys()):
+        pais = equipos_dict[eq]['country']
+        rivales_list = sorted(list(rivales[eq]))
+        paises = Counter([equipos_dict[r]['country'] for r in rivales[eq]])
+        paises_str = ', '.join([f"{k}x{v}" for k, v in paises.items()])
+        print(f"{eq} ({pais}) | Total rivales: {len(rivales_list)} -> [{paises_str}] -> {', '.join(rivales_list)}")
+    print("\n=============================\n")
+
+def generar_rivales(equipos_dict, max_iter=10000):
     lista_equipos = list(equipos_dict.keys())
-    exito =  False
+    bombos = generar_bombos(lista_equipos, num_bombos=4)
 
-    while(not exito):
-        
-        exito =  generar_bombos(lista_bombo, lista_equipos, equipos_dict)
-        
-        if exito:
-            print("Bombos generados con éxito:")    
-            for i, bombo in enumerate(lista_bombo):
-                print(f"Bombo {i+1}: {bombo}")
-        else:
-            print("No se pudo generar una distribución válida de bombos.")
-            
-            for i, bombo in enumerate(lista_bombo):
-                print(f"Bombo {i+1}: {bombo}")
-            
-            for bombo in lista_bombo:
-                bombo.clear()
-            lista_equipos = list(equipos_dict.keys())    
-            print("Rehaciendo bombos...\n")
+    print("Bombos generados:")
+    for i, bombo in enumerate(bombos):
+        print(f"Bombo {i+1}: {bombo}")
 
-    x = generar_partidos(lista_bombo, equipos_dict)
+    print("\nGenerando rivales con metaheurística...")
+    rivales = generar_rivales_metaheuristica(
+    lista_equipos,
+    equipos_dict,
+    bombos,
+    iteraciones=500000,
+    max_mismo_pais=1 
+    )
 
 
+    if rivales:
+        print("✅ Rivales generados correctamente.")
+        imprimir_rivales(rivales, equipos_dict)
+    else:
+        print("❌ No se pudo generar rivales válidos.")
 
-def generar_partidos(lb, equipos_dict, rivales_por_bombo=2):
-    partidos = []
-
-    for i, bombo_actual in enumerate(lb):
-        otros_bombos = [lb[j] for j in range(len(lb)) if j != i]
-
-        for equipo in bombo_actual:
-            pais_equipo = equipos_dict[equipo]['country']
-
-            for bombo_rival in otros_bombos:
-                # Filtramos rivales válidos (no mismo país)
-                rivales_validos = [r for r in bombo_rival if equipos_dict[r]['country'] != pais_equipo]
-
-                if len(rivales_validos) < rivales_por_bombo:
-                    raise ValueError(f"No hay suficientes rivales válidos para {equipo} en bombo {i+1}")
-
-                rivales = random.sample(rivales_validos, rivales_por_bombo)
-
-                for rival in rivales:
-                    partidos.append({"local": equipo, "visitante": rival})
-                    partidos.append({"local": rival, "visitante": equipo})
-
-    print("\n--- CALENDARIO DE PARTIDOS ---\n")
-    for partido in partidos:
-        print(f"{partido['local']:<20} vs {partido['visitante']:<20}")
-    print(f"\nNúmero total de partidos generados: {len(partidos)}\n")    
-    print(partidos)
-    return partidos
-
-
-
-
-
-
-def generar_bombos(lb, lista_equipos, equipos_dict):
-    
-    for i in range(4):
-        intentos = 0
-        print(lb[i])
-
-        while len(lb[i]) < 9 and lista_equipos:
-            
-            random.shuffle(lista_equipos)
-            equipo = random.choice(lista_equipos)
-            pais_equipo = equipos_dict[equipo]['country']
-            paises_en_bombo = [equipos_dict[eq]['country'] for eq in lb[i]]
-            
-            print(f"Intentando añadir {equipo} al bombo {i+1}")
-            print(f"Equipos en bombo {i+1} actualmente: {lb[i]}")
-            
-            # Aquí se comprueba que no hay más de dos equipos de un país en el bombo
-            conteo_pais = paises_en_bombo.count(pais_equipo)
-            print(intentos)
-            if equipo not in lb[i] and conteo_pais < 2:
-                lb[i].append(equipo)
-                lista_equipos.remove(equipo)
-            else:
-                intentos += 1
-
-            if intentos > 10:
-                break
-            
-        if len(lb[i]) < 9:
-            print(f"Reiniciando sorteo debido a demasiados intentos.")
-            return False
-
-    return True
-    
-    print(lb)
-
+    return rivales
 
 if __name__ == "__main__":
+    # Equipos y países
     TEAMS_EXAMPLE = [
         "Liverpool", "Arsenal", "Manchester City", "Chelsea", "Tottenham", "Newcastle",
         "Barcelona", "Real Madrid", "Atlético de Madrid", "Athletic Club", "Villarreal",
@@ -140,4 +88,4 @@ if __name__ == "__main__":
 
     TEAMS_DICT = {team: {"country": COUNTRY_OF_EXAMPLE[team]} for team in TEAMS_EXAMPLE}
 
-    bombos = generar_calendario(TEAMS_DICT)
+    generar_rivales(TEAMS_DICT)
