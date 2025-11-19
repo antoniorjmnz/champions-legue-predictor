@@ -9,25 +9,24 @@ from config import N_MATCHES, PER_POT
 teams = load_teams()
 n = len(teams)
 
-# Lista de rivales de cada equipo (grafo no dirigido)
+# Lista de rivales de cada equipo
 adj = [set() for _ in range(n)]
 
-# Grado (número de rivales) de cada equipo
+# Grado (número de rivales)
 deg = [0] * n
 
-# pot_count[i][p] = cuántos rivales tiene el equipo i del bombo p (1..4)
-pot_count = [[0] * 5 for _ in range(n)]  # índice 0 sin usar
+# pot_count[i][p] = rivales del bombo p
+pot_count = [[0] * 5 for _ in range(n)]  # índice 0 no usado
 
-# country_count[i][c] = cuántos rivales del país c tiene el equipo i
-# (solo contamos rivales del MISMO país para la restricción de MAX_SAME_COUNTRY)
+# Rivales del mismo país
 country_count = [defaultdict(int) for _ in range(n)]
 
-# Número total de emparejamientos (cada partido cuenta para 2 equipos)
+# Número total de emparejamientos
 E = n * N_MATCHES // 2
 
 
 def add_edge(i: int, j: int) -> None:
-    """Añade un emparejamiento (i, j) al estado global."""
+    """Añade un emparejamiento (i, j)."""
     adj[i].add(j)
     adj[j].add(i)
 
@@ -40,13 +39,12 @@ def add_edge(i: int, j: int) -> None:
 
     ci, cj = teams[i].country, teams[j].country
     if ci == cj:
-        # Solo contamos rivales del mismo país
         country_count[i][ci] += 1
         country_count[j][cj] += 1
 
 
 def remove_edge(i: int, j: int) -> None:
-    """Deshace el emparejamiento (i, j)."""
+    """Elimina el emparejamiento (i, j)."""
     if j in adj[i]:
         adj[i].remove(j)
     if i in adj[j]:

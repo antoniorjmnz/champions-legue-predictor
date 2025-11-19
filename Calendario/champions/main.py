@@ -7,7 +7,8 @@ from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
 from state import teams
 from data import generar_bombos_aleatorios
 from fixtures import generar_partidos_unicos
-import calendar as cl
+import league_calendar as uefa_calendar
+
 from verificar_calendario import verificar_calendario
 
 
@@ -122,8 +123,9 @@ def main():
     print(f"\nTOTAL PARTIDOS GENERADOS: {len(partidos)}")
 
     # Generar calendario de Fase Liga
-    calendar = cl.generate_league_calendar(partidos)
-    cl.print_calendar(calendar)
+    calendar = uefa_calendar.generate_league_calendar(partidos)
+    uefa_calendar.print_calendar(calendar)
+
 
     verificar_calendario(calendar)
 
