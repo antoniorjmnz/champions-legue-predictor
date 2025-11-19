@@ -6,6 +6,9 @@ from state import teams, adj, deg, pot_count
 from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
 from state import teams
 from data import generar_bombos_aleatorios
+from fixtures import generar_partidos_unicos
+import calendar as cl
+from verificar_calendario import verificar_calendario
 
 
 def mostrar_bombos():
@@ -114,6 +117,15 @@ def main():
         print(f"{t.name:22s} ({t.country}, B{t.pot}) -> {rivals}")
     print_diagnostics()
 
+    # Generar partidos únicos (local/visitante)
+    partidos = generar_partidos_unicos()
+    print(f"\nTOTAL PARTIDOS GENERADOS: {len(partidos)}")
+
+    # Generar calendario de Fase Liga
+    calendar = cl.generate_league_calendar(partidos)
+    cl.print_calendar(calendar)
+
+    verificar_calendario(calendar)
 
 if __name__ == "__main__":
     main()
