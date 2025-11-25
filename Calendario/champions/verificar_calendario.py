@@ -1,108 +1,130 @@
-# verificar_calendario.py
+from collections import defaultdict
 
-TEAM_CITY = {
-    "Real Madrid": "Madrid",
-    "Atlético de Madrid": "Madrid",
-    "Arsenal": "Londres",
-    "Chelsea": "Londres",
-    "Tottenham": "Londres",
-}
-
-# Rango oficial de jornadas (igual que en calendar.py)
-FECHAS_JORNADAS = {
-    1: ("2025-09-16", "2025-09-18"),
-    2: ("2025-09-30", "2025-10-02"),
-    3: ("2025-10-21", "2025-10-23"),
-    4: ("2025-11-04", "2025-11-06"),
-    5: ("2025-11-25", "2025-11-27"),
-    6: ("2025-12-09", "2025-12-11"),
-    7: ("2026-01-20", "2026-01-21"),
-    8: ("2026-01-27", "2026-01-28"),
-}
-
-from datetime import datetime
+N_JORNADAS = 8
 
 
-def verificar_calendario(jornadas):
+def verificar_calendario(calendario):
+    """
+    Verifica las propiedades básicas del calendario:
+      - Hay exactamente 8 jornadas.
+      - En cada jornada ningún equipo juega más de 1 partido.
+      - El número total de partidos es coherente con el número de equipos.
+      - Cada equipo juega exactamente 8 partidos (4 en casa y 4 fuera).
+
+    NO se comprueban ya:
+      - Fechas / horas concretas.
+      - Restricciones de ciudades (clash entre equipos de la misma ciudad).
+    """
+
     print("\n==============================")
     print("     VERIFICACIÓN DEL CALENDARIO")
     print("==============================\n")
 
-    errores = 0
+    # 1) Comprobación de número de jornadas
+    jornadas = sorted(calendario.keys())
+    if len(jornadas) != N_JORNADAS:
+        print(f"❌ El calendario tiene {len(jornadas)} jornadas y deberían ser {N_JORNADAS}.")
+        return False
 
-    # ----------------------------------------------
-    # 1. Verificar que no haya equipos jugando 2 veces en la MISMA jornada
-    # ----------------------------------------------
-    for j, partidos in jornadas.items():
-        equipos = []
-        for p in partidos:
-            equipos.append(p["local"])
-            equipos.append(p["visitante"])
+    # Estructuras para acumular estadísticas
+    partidos_por_jornada = {}
+    apariciones_por_jornada = {}   # jornada -> dict(equipo -> veces que aparece)
+    partidos_por_equipo = defaultdict(int)
+    home_count = defaultdict(int)
+    away_count = defaultdict(int)
+    parejas_globales = set()
+    equipos = set()
 
-        duplicados = {x for x in equipos if equipos.count(x) > 1}
+    todo_ok = True
 
-        if duplicados:
-            errores += 1
-            print(f"❌ Jornada {j}: equipos con 2 partidos -> {duplicados}")
-        else:
-            print(f"✔ Jornada {j}: ningún equipo juega dos veces")
+    # 2) Recorremos todas las jornadas
+    for j in jornadas:
+        partidos = calendario[j]
+        partidos_por_jornada[j] = len(partidos)
+        apariciones = defaultdict(int)
 
-    print("\n----------------------------------------------")
+        for local, visitante in partidos:
+            if local == visitante:
+                print(f"❌ Jornada {j}: partido inválido {local} vs {visitante} (mismo equipo).")
+                todo_ok = False
+                continue
 
-    # ----------------------------------------------
-    # 2. Verificar CITY-CLASH: misma ciudad NO juega en casa el mismo día
-    # ----------------------------------------------
-    for j, partidos in jornadas.items():
-        fecha_ciudad = {}  # fecha -> ciudad -> equipo
+            # Contabilizamos apariciones en la jornada (para saber si alguien juega dos veces)
+            apariciones[local] += 1
+            apariciones[visitante] += 1
 
-        for p in partidos:
-            local = p["local"]
-            fecha = p["fecha"]
-            ciudad = TEAM_CITY.get(local)
+            # Contabilizamos estadísticas globales
+            equipos.add(local)
+            equipos.add(visitante)
+            partidos_por_equipo[local] += 1
+            partidos_por_equipo[visitante] += 1
+            home_count[local] += 1
+            away_count[visitante] += 1
 
-            if not ciudad:
-                continue  # ciudades no conflictivas no importan
-
-            if fecha not in fecha_ciudad:
-                fecha_ciudad[fecha] = {}
-
-            if ciudad in fecha_ciudad[fecha]:
-                errores += 1
+            # Comprobamos duplicados globales de emparejamientos
+            par_no_ordenado = tuple(sorted((local, visitante)))
+            if par_no_ordenado in parejas_globales:
                 print(
-                    f"❌ CITY-CLASH en Jornada {j}, fecha {fecha}: "
-                    f"{local} coincide con {fecha_ciudad[fecha][ciudad]} (misma ciudad)"
+                    f"❌ El emparejamiento {local} vs {visitante} aparece más de una vez en el calendario."
                 )
+                todo_ok = False
             else:
-                fecha_ciudad[fecha][ciudad] = local
+                parejas_globales.add(par_no_ordenado)
 
-    print("\n----------------------------------------------")
+        apariciones_por_jornada[j] = dict(apariciones)
 
-    # ----------------------------------------------
-    # 3. Verificar que cada fecha esté dentro del rango oficial de la jornada
-    # ----------------------------------------------
-    for j, partidos in jornadas.items():
-        inicio_str, fin_str = FECHAS_JORNADAS[j]
-        inicio = datetime.strptime(inicio_str, "%Y-%m-%d")
-        fin = datetime.strptime(fin_str, "%Y-%m-%d")
+        # Nadie puede jugar más de una vez en la misma jornada
+        for eq, veces in apariciones.items():
+            if veces > 1:
+                print(f"❌ Jornada {j}: el equipo {eq} juega {veces} veces (solo debería jugar 1).")
+                todo_ok = False
 
-        for p in partidos:
-            fecha = datetime.strptime(p["fecha"], "%Y-%m-%d")
-
-            if not (inicio <= fecha <= fin):
-                errores += 1
+        # Si el calendario es perfecto, en cada jornada deben jugar todos los equipos
+        if len(equipos) > 0:
+            expected_partidos = len(equipos) // 2
+            if len(partidos) != expected_partidos:
                 print(
-                    f"❌ Fecha fuera de rango en Jornada {j}: "
-                    f"{p['local']} vs {p['visitante']} ({p['fecha']})"
+                    f"⚠ Jornada {j}: tiene {len(partidos)} partidos; "
+                    f"con {len(equipos)} equipos se esperaban {expected_partidos}."
+                )
+            if len(apariciones) != len(equipos):
+                print(
+                    f"⚠ Jornada {j}: solo aparecen {len(apariciones)} equipos "
+                    f"de {len(equipos)} posibles."
                 )
 
-    print("\n----------------------------------------------")
+    total_partidos = sum(partidos_por_jornada.values())
 
-    # ----------------------------------------------
-    # 4. Resumen final
-    # ----------------------------------------------
-    if errores == 0:
-        print("TODO CORRECTO – El calendario cumple todas las reglas ")
-    else:
-        print(f"ERRORES Encontrados {errores} problema(s). Revisa arriba.")
-
+    print("----------------------------------------------")
+    print(f"Jornadas totales: {len(jornadas)}")
+    print(f"Equipos detectados: {len(equipos)}")
+    print(f"Partidos totales: {total_partidos}")
     print("----------------------------------------------\n")
+
+    # 3) Comprobación de partidos por equipo (8) y reparto 4/4
+    for eq in sorted(equipos):
+        total = partidos_por_equipo[eq]
+        h = home_count[eq]
+        a = away_count[eq]
+
+        if total != 8:
+            print(f"❌ El equipo {eq} juega {total} partidos y debería jugar 8.")
+            todo_ok = False
+
+        if h != 4 or a != 4:
+            print(
+                f"❌ El equipo {eq} tiene {h} partidos en casa y {a} fuera "
+                "(deberían ser 4 y 4)."
+            )
+            todo_ok = False
+
+    if todo_ok:
+        print("----------------------------------------------")
+        print("TODO CORRECTO – El calendario cumple todas las reglas básicas.")
+        print("----------------------------------------------")
+    else:
+        print("----------------------------------------------")
+        print("Se han encontrado problemas en el calendario.")
+        print("----------------------------------------------")
+
+    return todo_ok

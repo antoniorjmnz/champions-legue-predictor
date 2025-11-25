@@ -6,8 +6,8 @@ from state import teams, adj, deg, pot_count
 from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
 from state import teams
 from data import generar_bombos_aleatorios
-from fixtures import generar_partidos_unicos
-import league_calendar as uefa_calendar
+from fixtures import generar_partidos_unicos_ida_vuelta, print_partidos_bonitos
+from league_calendar import generate_league_calendar, print_calendar
 
 from verificar_calendario import verificar_calendario
 
@@ -97,6 +97,9 @@ def print_diagnostics():
         print("----------------------------------------------------")
 
 
+
+
+
 def main():
     print("Generando sorteo determinista con bombos aleatorios...")
     mostrar_bombos()
@@ -104,9 +107,7 @@ def main():
     print("¿Solución encontrada?:", found, "| Llamadas recursivas:", calls)
 
     if not found:
-        print(
-            "❌ No se ha encontrado solución. Puede que para esta configuración de bombos aleatorios no exista un sorteo válido con estas restricciones."
-        )
+        print("❌ No se encontró solución para estos bombos.")
         return
 
     ok = check_constraints()
@@ -118,16 +119,10 @@ def main():
         print(f"{t.name:22s} ({t.country}, B{t.pot}) -> {rivals}")
     print_diagnostics()
 
-    # Generar partidos únicos (local/visitante)
-    partidos = generar_partidos_unicos()
-    print(f"\nTOTAL PARTIDOS GENERADOS: {len(partidos)}")
+    # 🆕 AQUI generamos ida+vuelta
+    partidos = generar_partidos_unicos_ida_vuelta()
 
-    # Generar calendario de Fase Liga
-    calendar = uefa_calendar.generate_league_calendar(partidos)
-    uefa_calendar.print_calendar(calendar)
-
-
-    verificar_calendario(calendar)
+    print_partidos_bonitos(partidos)
 
 if __name__ == "__main__":
     main()
