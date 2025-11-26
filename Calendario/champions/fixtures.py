@@ -1,4 +1,3 @@
-# fixtures.py
 import random
 from state import teams, adj
 
@@ -142,6 +141,7 @@ def print_partidos_bonitos(partidos):
         print(f"{local:22s} (LOCAL)  vs  {visitante}")
 
     print("\nTOTAL PARTIDOS:", len(partidos))
+
 
 def print_partidos_por_equipo_ordenados(partidos_finales):
     """

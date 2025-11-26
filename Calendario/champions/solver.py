@@ -1,4 +1,3 @@
-# solver.py
 """Algoritmo de backtracking determinista para construir el sorteo."""
 
 from constraints import compute_candidates

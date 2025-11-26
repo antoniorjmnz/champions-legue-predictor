@@ -5,340 +5,376 @@ Generando sorteo determinista con bombos aleatorios...
 ==============================
 
 BOMBO 1:
- - Qarabag
  - Club Brugge
  - Pafos
- - Newcastle
- - Barcelona
- - Villarreal
- - Paris Saint-Germain
- - Eintracht Frankfurt
+ - Arsenal
+ - Atlético de Madrid
+ - Real Madrid
+ - Inter
  - PSV
+ - Bodo/Glimt
+ - Sporting CP
 
 BOMBO 2:
+ - Qarabag
  - Copenhagen
- - Arsenal
  - Chelsea
- - Manchester City
- - Athletic Club
+ - Barcelona
  - Marseille
- - Borussia Dortmund
+ - Eintracht Frankfurt
+ - Olympiacos
  - Atalanta
- - Juventus
+ - Galatasaray
 
 BOMBO 3:
- - Slavia Praha
- - Tottenham
- - Atlético de Madrid
+ - Union Saint-Gilloise
+ - Liverpool
  - Monaco
  - Bayern München
+ - Juventus
  - Napoli
  - Kairat Almaty
  - Ajax
  - Benfica
 
 BOMBO 4:
- - Union Saint-Gilloise
- - Liverpool
- - Real Madrid
+ - Slavia Praha
+ - Manchester City
+ - Newcastle
+ - Tottenham
+ - Athletic Club
+ - Villarreal
+ - Paris Saint-Germain
  - Bayer Leverkusen
- - Olympiacos
- - Inter
- - Bodo/Glimt
- - Sporting CP
- - Galatasaray
+ - Borussia Dortmund
 ¿Solución encontrada?: True | Llamadas recursivas: 0
-¿Restricciones correctas?: True
+¿Restricciones básicas correctas?: True
 
 ==============================
      DIAGNÓSTICO DETALLADO
 ==============================
 
-🔵 Qarabag (AZE, B1)
-   Rivales (8): ['Atlético de Madrid', 'Chelsea', 'Copenhagen', 'Eintracht Frankfurt', 'Liverpool', 'Newcastle', 'Real Madrid', 'Tottenham']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ENG': 4, 'GER': 1, 'DEN': 1, 'ESP': 2}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
 🔵 Club Brugge (BEL, B1)
-   Rivales (8): ['Bodo/Glimt', 'Borussia Dortmund', 'Inter', 'Kairat Almaty', 'Marseille', 'Monaco', 'Newcastle', 'Paris Saint-Germain']
+   Rivales (8): ['Arsenal', 'Atalanta', 'Athletic Club', 'Copenhagen', 'Inter', 'Liverpool', 'Manchester City', 'Monaco']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 1, 'NOR': 1, 'ENG': 1, 'FRA': 3, 'GER': 1, 'KAZ': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'ENG': 3, 'ITA': 2, 'DEN': 1, 'FRA': 1, 'ESP': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 Pafos (CYP, B1)
-   Rivales (8): ['Ajax', 'Barcelona', 'Borussia Dortmund', 'Inter', 'Marseille', 'Napoli', 'Olympiacos', 'PSV']
+   Rivales (8): ['Arsenal', 'Eintracht Frankfurt', 'Kairat Almaty', 'Napoli', 'Olympiacos', 'PSV', 'Paris Saint-Germain', 'Villarreal']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 2, 'ESP': 1, 'NED': 2, 'FRA': 1, 'GER': 1, 'GRE': 1}
+   ➤ Rivales por país: {'ESP': 1, 'FRA': 1, 'ENG': 1, 'NED': 1, 'GER': 1, 'GRE': 1, 'ITA': 1, 'KAZ': 1}
+   ➤ Máx. rivales de un país extranjero: 1 de ESP (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Newcastle (ENG, B1)
-   Rivales (8): ['Athletic Club', 'Atlético de Madrid', 'Club Brugge', 'Copenhagen', 'Qarabag', 'Real Madrid', 'Slavia Praha', 'Union Saint-Gilloise']
+🔵 Arsenal (ENG, B1)
+   Rivales (8): ['Athletic Club', 'Club Brugge', 'Copenhagen', 'Monaco', 'Pafos', 'Qarabag', 'Slavia Praha', 'Union Saint-Gilloise']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'BEL': 2, 'DEN': 1, 'ESP': 3, 'CZE': 1}
+   ➤ Rivales por país: {'BEL': 2, 'CYP': 1, 'AZE': 1, 'DEN': 1, 'FRA': 1, 'CZE': 1, 'ESP': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de BEL (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Barcelona (ESP, B1)
-   Rivales (8): ['Arsenal', 'Bayer Leverkusen', 'Chelsea', 'Liverpool', 'Monaco', 'Pafos', 'Paris Saint-Germain', 'Tottenham']
+🔵 Atlético de Madrid (ESP, B1)
+   Rivales (8): ['Bayern München', 'Chelsea', 'Inter', 'Liverpool', 'Manchester City', 'Marseille', 'PSV', 'Paris Saint-Germain']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'CYP': 1, 'FRA': 2, 'ENG': 4, 'GER': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Villarreal (ESP, B1)
-   Rivales (8): ['Ajax', 'Arsenal', 'Bodo/Glimt', 'Eintracht Frankfurt', 'Kairat Almaty', 'Manchester City', 'PSV', 'Sporting CP']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'NOR': 1, 'POR': 1, 'GER': 1, 'NED': 2, 'ENG': 2, 'KAZ': 1}
+   ➤ Rivales por país: {'FRA': 2, 'ITA': 1, 'NED': 1, 'ENG': 3, 'GER': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Paris Saint-Germain (FRA, B1)
-   Rivales (8): ['Athletic Club', 'Barcelona', 'Bayer Leverkusen', 'Bayern München', 'Club Brugge', 'Manchester City', 'Napoli', 'Olympiacos']
+🔵 Real Madrid (ESP, B1)
+   Rivales (8): ['Ajax', 'Bodo/Glimt', 'Chelsea', 'Kairat Almaty', 'Newcastle', 'Olympiacos', 'Sporting CP', 'Tottenham']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'BEL': 1, 'ESP': 2, 'ENG': 1, 'GER': 2, 'ITA': 1, 'GRE': 1}
+   ➤ Rivales por país: {'NOR': 1, 'POR': 1, 'ENG': 3, 'GRE': 1, 'KAZ': 1, 'NED': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Eintracht Frankfurt (GER, B1)
-   Rivales (8): ['Atalanta', 'Benfica', 'Galatasaray', 'Juventus', 'Qarabag', 'Slavia Praha', 'Union Saint-Gilloise', 'Villarreal']
+🔵 Inter (ITA, B1)
+   Rivales (8): ['Atlético de Madrid', 'Benfica', 'Club Brugge', 'Galatasaray', 'Qarabag', 'Slavia Praha', 'Union Saint-Gilloise', 'Villarreal']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'TUR': 1, 'ESP': 1, 'ITA': 2, 'CZE': 1, 'POR': 1, 'BEL': 1}
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'ESP': 2, 'BEL': 2, 'AZE': 1, 'TUR': 1, 'POR': 1, 'CZE': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 PSV (NED, B1)
-   Rivales (8): ['Atalanta', 'Bayern München', 'Benfica', 'Galatasaray', 'Juventus', 'Pafos', 'Sporting CP', 'Villarreal']
+   Rivales (8): ['Atlético de Madrid', 'Barcelona', 'Bayern München', 'Juventus', 'Marseille', 'Newcastle', 'Pafos', 'Tottenham']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'CYP': 1, 'POR': 2, 'TUR': 1, 'ESP': 1, 'ITA': 2, 'GER': 1}
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Copenhagen (DEN, B2)
-   Rivales (8): ['Ajax', 'Atalanta', 'Bodo/Glimt', 'Chelsea', 'Kairat Almaty', 'Newcastle', 'Qarabag', 'Sporting CP']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'NOR': 1, 'POR': 1, 'ENG': 2, 'ITA': 1, 'KAZ': 1, 'NED': 1}
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Arsenal (ENG, B2)
-   Rivales (8): ['Barcelona', 'Bayern München', 'Borussia Dortmund', 'Inter', 'Marseille', 'Napoli', 'Olympiacos', 'Villarreal']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 2, 'ESP': 2, 'FRA': 1, 'GER': 2, 'GRE': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Chelsea (ENG, B2)
-   Rivales (8): ['Athletic Club', 'Atlético de Madrid', 'Barcelona', 'Copenhagen', 'Qarabag', 'Real Madrid', 'Slavia Praha', 'Union Saint-Gilloise']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'ESP': 4, 'DEN': 1, 'CZE': 1, 'BEL': 1}
+   ➤ Rivales por país: {'CYP': 1, 'ESP': 2, 'FRA': 1, 'GER': 1, 'ITA': 1, 'ENG': 2}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Manchester City (ENG, B2)
-   Rivales (8): ['Atalanta', 'Benfica', 'Galatasaray', 'Juventus', 'Paris Saint-Germain', 'Slavia Praha', 'Union Saint-Gilloise', 'Villarreal']
+🔵 Bodo/Glimt (NOR, B1)
+   Rivales (8): ['Barcelona', 'Bayer Leverkusen', 'Benfica', 'Borussia Dortmund', 'Eintracht Frankfurt', 'Napoli', 'Real Madrid', 'Sporting CP']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'TUR': 1, 'ESP': 1, 'FRA': 1, 'ITA': 2, 'CZE': 1, 'POR': 1, 'BEL': 1}
+   ➤ Rivales por país: {'GER': 3, 'ESP': 2, 'POR': 2, 'ITA': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de GER (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Athletic Club (ESP, B2)
-   Rivales (8): ['Bayer Leverkusen', 'Chelsea', 'Liverpool', 'Marseille', 'Monaco', 'Newcastle', 'Paris Saint-Germain', 'Tottenham']
+🔵 Sporting CP (POR, B1)
+   Rivales (8): ['Ajax', 'Atalanta', 'Bayer Leverkusen', 'Bodo/Glimt', 'Borussia Dortmund', 'Galatasaray', 'Juventus', 'Real Madrid']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ENG': 4, 'FRA': 3, 'GER': 1}
+   ➤ Rivales por país: {'GER': 2, 'ESP': 1, 'NOR': 1, 'ITA': 2, 'TUR': 1, 'NED': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de GER (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Qarabag (AZE, B2)
+   Rivales (8): ['Arsenal', 'Athletic Club', 'Bayern München', 'Copenhagen', 'Eintracht Frankfurt', 'Inter', 'Napoli', 'Villarreal']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'ESP': 2, 'ENG': 1, 'ITA': 2, 'DEN': 1, 'GER': 2}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Copenhagen (DEN, B2)
+   Rivales (8): ['Arsenal', 'Bayern München', 'Borussia Dortmund', 'Club Brugge', 'Galatasaray', 'Liverpool', 'Newcastle', 'Qarabag']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'BEL': 1, 'ENG': 3, 'GER': 2, 'AZE': 1, 'TUR': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Chelsea (ENG, B2)
+   Rivales (8): ['Atlético de Madrid', 'Barcelona', 'Bayer Leverkusen', 'Borussia Dortmund', 'Eintracht Frankfurt', 'Juventus', 'Napoli', 'Real Madrid']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'GER': 3, 'ESP': 3, 'ITA': 2}
+   ➤ Máx. rivales de un país extranjero: 3 de GER (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Barcelona (ESP, B2)
+   Rivales (8): ['Ajax', 'Bodo/Glimt', 'Chelsea', 'Kairat Almaty', 'Marseille', 'Newcastle', 'PSV', 'Tottenham']    
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'NED': 2, 'NOR': 1, 'ENG': 3, 'FRA': 1, 'KAZ': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 Marseille (FRA, B2)
-   Rivales (8): ['Arsenal', 'Athletic Club', 'Bodo/Glimt', 'Club Brugge', 'Inter', 'Kairat Almaty', 'Napoli', 'Pafos']
+   Rivales (8): ['Atlético de Madrid', 'Barcelona', 'Benfica', 'Manchester City', 'Olympiacos', 'PSV', 'Slavia Praha', 'Union Saint-Gilloise']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 2, 'BEL': 1, 'CYP': 1, 'NOR': 1, 'ENG': 1, 'ESP': 1, 'KAZ': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'ESP': 2, 'NED': 1, 'GRE': 1, 'BEL': 1, 'POR': 1, 'CZE': 1, 'ENG': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Borussia Dortmund (GER, B2)
-   Rivales (8): ['Ajax', 'Arsenal', 'Benfica', 'Club Brugge', 'Galatasaray', 'Juventus', 'Pafos', 'Sporting CP']
+🔵 Eintracht Frankfurt (GER, B2)
+   Rivales (8): ['Bodo/Glimt', 'Chelsea', 'Liverpool', 'Manchester City', 'Pafos', 'Qarabag', 'Slavia Praha', 'Union Saint-Gilloise']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'BEL': 1, 'CYP': 1, 'POR': 2, 'TUR': 1, 'ENG': 1, 'ITA': 1, 'NED': 1}
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'CYP': 1, 'NOR': 1, 'AZE': 1, 'ENG': 3, 'BEL': 1, 'CZE': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Olympiacos (GRE, B2)
+   Rivales (8): ['Atalanta', 'Athletic Club', 'Kairat Almaty', 'Marseille', 'Monaco', 'Pafos', 'Real Madrid', 'Tottenham']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'CYP': 1, 'ESP': 2, 'FRA': 2, 'ITA': 1, 'KAZ': 1, 'ENG': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 Atalanta (ITA, B2)
-   Rivales (8): ['Bayer Leverkusen', 'Copenhagen', 'Eintracht Frankfurt', 'Liverpool', 'Manchester City', 'Monaco', 'PSV', 'Tottenham']
+   Rivales (8): ['Benfica', 'Club Brugge', 'Galatasaray', 'Monaco', 'Olympiacos', 'Paris Saint-Germain', 'Sporting CP', 'Villarreal']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'GER': 2, 'NED': 1, 'DEN': 1, 'ENG': 3, 'FRA': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
+   ➤ Rivales por país: {'BEL': 1, 'FRA': 2, 'ESP': 1, 'POR': 2, 'GRE': 1, 'TUR': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de FRA (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Juventus (ITA, B2)
-   Rivales (8): ['Atlético de Madrid', 'Bayern München', 'Borussia Dortmund', 'Eintracht Frankfurt', 'Manchester City', 'Olympiacos', 'PSV', 'Real Madrid']
+🔵 Galatasaray (TUR, B2)
+   Rivales (8): ['Ajax', 'Atalanta', 'Bayer Leverkusen', 'Copenhagen', 'Inter', 'Juventus', 'Paris Saint-Germain', 'Sporting CP']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'GER': 3, 'NED': 1, 'ENG': 1, 'ESP': 2, 'GRE': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Slavia Praha (CZE, B3)
-   Rivales (8): ['Benfica', 'Chelsea', 'Eintracht Frankfurt', 'Liverpool', 'Manchester City', 'Newcastle', 'Tottenham', 'Union Saint-Gilloise']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ENG': 5, 'GER': 1, 'POR': 1, 'BEL': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Tottenham (ENG, B3)
-   Rivales (8): ['Atalanta', 'Athletic Club', 'Atlético de Madrid', 'Barcelona', 'Qarabag', 'Real Madrid', 'Slavia Praha', 'Union Saint-Gilloise']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'ESP': 4, 'ITA': 1, 'CZE': 1, 'BEL': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Atlético de Madrid (ESP, B3)
-   Rivales (8): ['Bayer Leverkusen', 'Chelsea', 'Juventus', 'Liverpool', 'Monaco', 'Newcastle', 'Qarabag', 'Tottenham']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'ENG': 4, 'ITA': 1, 'FRA': 1, 'GER': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Monaco (FRA, B3)
-   Rivales (8): ['Atalanta', 'Athletic Club', 'Atlético de Madrid', 'Barcelona', 'Bayer Leverkusen', 'Benfica', 'Club Brugge', 'Olympiacos']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'BEL': 1, 'ESP': 3, 'ITA': 1, 'POR': 1, 'GER': 1, 'GRE': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Bayern München (GER, B3)
-   Rivales (8): ['Arsenal', 'Inter', 'Juventus', 'Kairat Almaty', 'Napoli', 'Olympiacos', 'PSV', 'Paris Saint-Germain']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 3, 'FRA': 1, 'NED': 1, 'ENG': 1, 'KAZ': 1, 'GRE': 1}
+   ➤ Rivales por país: {'FRA': 1, 'GER': 1, 'ITA': 3, 'POR': 1, 'DEN': 1, 'NED': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ITA (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Napoli (ITA, B3)
-   Rivales (8): ['Ajax', 'Arsenal', 'Bayern München', 'Bodo/Glimt', 'Marseille', 'Pafos', 'Paris Saint-Germain', 'Sporting CP']
+🔵 Union Saint-Gilloise (BEL, B3)
+   Rivales (8): ['Arsenal', 'Eintracht Frankfurt', 'Inter', 'Juventus', 'Marseille', 'Napoli', 'Newcastle', 'Tottenham']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'NOR': 1, 'CYP': 1, 'POR': 1, 'FRA': 2, 'ENG': 1, 'GER': 1, 'NED': 1}
+   ➤ Rivales por país: {'ENG': 3, 'ITA': 3, 'FRA': 1, 'GER': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Liverpool (ENG, B3)
+   Rivales (8): ['Athletic Club', 'Atlético de Madrid', 'Bayern München', 'Club Brugge', 'Copenhagen', 'Eintracht Frankfurt', 'Monaco', 'Villarreal']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'BEL': 1, 'ESP': 3, 'DEN': 1, 'GER': 2, 'FRA': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Monaco (FRA, B3)
+   Rivales (8): ['Arsenal', 'Atalanta', 'Bayer Leverkusen', 'Bayern München', 'Club Brugge', 'Liverpool', 'Manchester City', 'Olympiacos']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'BEL': 1, 'ENG': 3, 'GER': 2, 'GRE': 1, 'ITA': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Bayern München (GER, B3)
+   Rivales (8): ['Atlético de Madrid', 'Copenhagen', 'Liverpool', 'Manchester City', 'Monaco', 'PSV', 'Paris Saint-Germain', 'Qarabag']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'FRA': 2, 'ESP': 1, 'NED': 1, 'AZE': 1, 'DEN': 1, 'ENG': 2}
+   ➤ Máx. rivales de un país extranjero: 2 de FRA (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Juventus (ITA, B3)
+   Rivales (8): ['Ajax', 'Chelsea', 'Galatasaray', 'Newcastle', 'PSV', 'Sporting CP', 'Tottenham', 'Union Saint-Gilloise']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'NED': 2, 'POR': 1, 'ENG': 3, 'TUR': 1, 'BEL': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Napoli (ITA, B3)
+   Rivales (8): ['Benfica', 'Bodo/Glimt', 'Borussia Dortmund', 'Chelsea', 'Pafos', 'Qarabag', 'Union Saint-Gilloise', 'Villarreal']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'ESP': 1, 'CYP': 1, 'GER': 1, 'NOR': 1, 'AZE': 1, 'ENG': 1, 'BEL': 1, 'POR': 1}
+   ➤ Máx. rivales de un país extranjero: 1 de ESP (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 Kairat Almaty (KAZ, B3)
-   Rivales (8): ['Ajax', 'Bayern München', 'Bodo/Glimt', 'Club Brugge', 'Copenhagen', 'Inter', 'Marseille', 'Villarreal']
+   Rivales (8): ['Ajax', 'Barcelona', 'Benfica', 'Borussia Dortmund', 'Olympiacos', 'Pafos', 'Real Madrid', 'Slavia Praha']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 1, 'BEL': 1, 'NOR': 1, 'ESP': 1, 'DEN': 1, 'FRA': 1, 'GER': 1, 'NED': 1}     
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Ajax (NED, B3)
-   Rivales (8): ['Borussia Dortmund', 'Copenhagen', 'Galatasaray', 'Kairat Almaty', 'Napoli', 'Pafos', 'Sporting CP', 'Villarreal']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'CYP': 1, 'POR': 1, 'TUR': 1, 'ESP': 1, 'DEN': 1, 'GER': 1, 'ITA': 1, 'KAZ': 1}     
+   ➤ Rivales por país: {'CYP': 1, 'GER': 1, 'ESP': 2, 'GRE': 1, 'NED': 1, 'POR': 1, 'CZE': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Benfica (POR, B3)
-   Rivales (8): ['Borussia Dortmund', 'Eintracht Frankfurt', 'Galatasaray', 'Manchester City', 'Monaco', 'PSV', 'Real Madrid', 'Slavia Praha']
+🔵 Ajax (NED, B3)
+   Rivales (8): ['Barcelona', 'Bayer Leverkusen', 'Galatasaray', 'Juventus', 'Kairat Almaty', 'Real Madrid', 'Slavia Praha', 'Sporting CP']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'TUR': 1, 'GER': 2, 'NED': 1, 'ENG': 1, 'CZE': 1, 'FRA': 1, 'ESP': 1}
+   ➤ Rivales por país: {'GER': 1, 'ESP': 2, 'POR': 1, 'TUR': 1, 'ITA': 1, 'KAZ': 1, 'CZE': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ESP (límite 3) ✔
    ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Union Saint-Gilloise (BEL, B4)
-   Rivales (8): ['Chelsea', 'Eintracht Frankfurt', 'Liverpool', 'Manchester City', 'Newcastle', 'Real Madrid', 'Slavia Praha', 'Tottenham']
+🔵 Benfica (POR, B3)
+   Rivales (8): ['Atalanta', 'Athletic Club', 'Bodo/Glimt', 'Inter', 'Kairat Almaty', 'Marseille', 'Napoli', 'Paris Saint-Germain']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ENG': 5, 'GER': 1, 'CZE': 1, 'ESP': 1}
+   ➤ Rivales por país: {'FRA': 2, 'ITA': 3, 'NOR': 1, 'KAZ': 1, 'ESP': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ITA (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Slavia Praha (CZE, B4)
+   Rivales (8): ['Ajax', 'Arsenal', 'Eintracht Frankfurt', 'Inter', 'Kairat Almaty', 'Marseille', 'Paris Saint-Germain', 'Villarreal']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'ESP': 1, 'FRA': 2, 'ENG': 1, 'ITA': 1, 'GER': 1, 'KAZ': 1, 'NED': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de FRA (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Manchester City (ENG, B4)
+   Rivales (8): ['Athletic Club', 'Atlético de Madrid', 'Bayern München', 'Club Brugge', 'Eintracht Frankfurt', 'Marseille', 'Monaco', 'Paris Saint-Germain']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'BEL': 1, 'FRA': 3, 'ESP': 2, 'GER': 2}
+   ➤ Máx. rivales de un país extranjero: 3 de FRA (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Newcastle (ENG, B4)
+   Rivales (8): ['Barcelona', 'Bayer Leverkusen', 'Copenhagen', 'Juventus', 'PSV', 'Real Madrid', 'Union Saint-Gilloise', 'Villarreal']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'ESP': 3, 'GER': 1, 'NED': 1, 'DEN': 1, 'BEL': 1, 'ITA': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ESP (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Tottenham (ENG, B4)
+   Rivales (8): ['Barcelona', 'Bayer Leverkusen', 'Borussia Dortmund', 'Juventus', 'Olympiacos', 'PSV', 'Real Madrid', 'Union Saint-Gilloise']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'GER': 2, 'ESP': 2, 'NED': 1, 'GRE': 1, 'BEL': 1, 'ITA': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de GER (límite 3) ✔
+   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Athletic Club (ESP, B4)
+   Rivales (8): ['Arsenal', 'Benfica', 'Borussia Dortmund', 'Club Brugge', 'Liverpool', 'Manchester City', 'Olympiacos', 'Qarabag']
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'BEL': 1, 'ENG': 3, 'GER': 1, 'AZE': 1, 'GRE': 1, 'POR': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
+   ➤ 8 rivales obligatorios: ✔
+   ➤ 2 por bombo: ✔
+----------------------------------------------------
+🔵 Villarreal (ESP, B4)
+   Rivales (8): ['Atalanta', 'Inter', 'Liverpool', 'Napoli', 'Newcastle', 'Pafos', 'Qarabag', 'Slavia Praha']       
+   ➤ Rivales del mismo país: 0/0 ✔
+   ➤ Rivales por país: {'CYP': 1, 'ITA': 3, 'AZE': 1, 'ENG': 2, 'CZE': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ITA (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Liverpool (ENG, B4)
-   Rivales (8): ['Atalanta', 'Athletic Club', 'Atlético de Madrid', 'Barcelona', 'Bayer Leverkusen', 'Qarabag', 'Slavia Praha', 'Union Saint-Gilloise']
+🔵 Paris Saint-Germain (FRA, B4)
+   Rivales (8): ['Atalanta', 'Atlético de Madrid', 'Bayern München', 'Benfica', 'Galatasaray', 'Manchester City', 'Pafos', 'Slavia Praha']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'ESP': 3, 'ITA': 1, 'CZE': 1, 'BEL': 1, 'GER': 1}
-   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Real Madrid (ESP, B4)
-   Rivales (8): ['Benfica', 'Chelsea', 'Juventus', 'Newcastle', 'Olympiacos', 'Qarabag', 'Tottenham', 'Union Saint-Gilloise']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'AZE': 1, 'ENG': 3, 'ITA': 1, 'POR': 1, 'BEL': 1, 'GRE': 1}
+   ➤ Rivales por país: {'CYP': 1, 'ESP': 1, 'ITA': 1, 'TUR': 1, 'GER': 1, 'POR': 1, 'CZE': 1, 'ENG': 1}
+   ➤ Máx. rivales de un país extranjero: 1 de CYP (límite 3) ✔
    ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
 🔵 Bayer Leverkusen (GER, B4)
-   Rivales (8): ['Atalanta', 'Athletic Club', 'Atlético de Madrid', 'Barcelona', 'Inter', 'Liverpool', 'Monaco', 'Paris Saint-Germain']
+   Rivales (8): ['Ajax', 'Bodo/Glimt', 'Chelsea', 'Galatasaray', 'Monaco', 'Newcastle', 'Sporting CP', 'Tottenham'] 
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 2, 'ESP': 3, 'FRA': 2, 'ENG': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'NOR': 1, 'POR': 1, 'ENG': 3, 'TUR': 1, 'FRA': 1, 'NED': 1}
+   ➤ Máx. rivales de un país extranjero: 3 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
-🔵 Olympiacos (GRE, B4)
-   Rivales (8): ['Arsenal', 'Bayern München', 'Bodo/Glimt', 'Juventus', 'Monaco', 'Pafos', 'Paris Saint-Germain', 'Real Madrid']
+🔵 Borussia Dortmund (GER, B4)
+   Rivales (8): ['Athletic Club', 'Bodo/Glimt', 'Chelsea', 'Copenhagen', 'Kairat Almaty', 'Napoli', 'Sporting CP', 'Tottenham']
    ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'NOR': 1, 'CYP': 1, 'FRA': 2, 'ENG': 1, 'ITA': 1, 'GER': 1, 'ESP': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Inter (ITA, B4)
-   Rivales (8): ['Arsenal', 'Bayer Leverkusen', 'Bayern München', 'Club Brugge', 'Kairat Almaty', 'Marseille', 'Pafos', 'Sporting CP']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'BEL': 1, 'CYP': 1, 'POR': 1, 'ENG': 1, 'FRA': 1, 'GER': 2, 'KAZ': 1}
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Bodo/Glimt (NOR, B4)
-   Rivales (8): ['Club Brugge', 'Copenhagen', 'Galatasaray', 'Kairat Almaty', 'Marseille', 'Napoli', 'Olympiacos', 'Villarreal']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'BEL': 1, 'TUR': 1, 'ESP': 1, 'DEN': 1, 'FRA': 1, 'ITA': 1, 'KAZ': 1, 'GRE': 1}     
-   ➤ Rivales por bombo: {1: 2, 4: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Sporting CP (POR, B4)
-   Rivales (8): ['Ajax', 'Borussia Dortmund', 'Copenhagen', 'Galatasaray', 'Inter', 'Napoli', 'PSV', 'Villarreal']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'ITA': 2, 'TUR': 1, 'ESP': 1, 'NED': 2, 'DEN': 1, 'GER': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
-   ➤ 8 rivales obligatorios: ✔
-   ➤ 2 por bombo: ✔
-----------------------------------------------------
-🔵 Galatasaray (TUR, B4)
-   Rivales (8): ['Ajax', 'Benfica', 'Bodo/Glimt', 'Borussia Dortmund', 'Eintracht Frankfurt', 'Manchester City', 'PSV', 'Sporting CP']
-   ➤ Rivales del mismo país: 0/0 ✔
-   ➤ Rivales por país: {'NOR': 1, 'POR': 2, 'GER': 2, 'NED': 2, 'ENG': 1}
-   ➤ Rivales por bombo: {4: 2, 1: 2, 2: 2, 3: 2}
+   ➤ Rivales por país: {'NOR': 1, 'POR': 1, 'DEN': 1, 'ENG': 2, 'ITA': 1, 'KAZ': 1, 'ESP': 1}
+   ➤ Máx. rivales de un país extranjero: 2 de ENG (límite 3) ✔
+   ➤ Rivales por bombo: {1: 2, 2: 2, 3: 2, 4: 2}
    ➤ 8 rivales obligatorios: ✔
    ➤ 2 por bombo: ✔
 ----------------------------------------------------
@@ -348,150 +384,150 @@ BOMBO 4:
      LISTA FINAL DE PARTIDOS
 ==============================
 
-Bayer Leverkusen       (LOCAL)  vs  Athletic Club
-Union Saint-Gilloise   (LOCAL)  vs  Slavia Praha
-Barcelona              (LOCAL)  vs  Bayer Leverkusen
-Newcastle              (LOCAL)  vs  Athletic Club
-Chelsea                (LOCAL)  vs  Athletic Club
-Tottenham              (LOCAL)  vs  Athletic Club
-Newcastle              (LOCAL)  vs  Qarabag
-Atalanta               (LOCAL)  vs  Bayer Leverkusen
-Athletic Club          (LOCAL)  vs  Paris Saint-Germain
-Qarabag                (LOCAL)  vs  Atlético de Madrid
-Slavia Praha           (LOCAL)  vs  Tottenham
-Athletic Club          (LOCAL)  vs  Monaco
-Union Saint-Gilloise   (LOCAL)  vs  Newcastle
-Union Saint-Gilloise   (LOCAL)  vs  Tottenham
-Slavia Praha           (LOCAL)  vs  Newcastle
-Chelsea                (LOCAL)  vs  Barcelona
-Barcelona              (LOCAL)  vs  Arsenal
-Qarabag                (LOCAL)  vs  Chelsea
-Tottenham              (LOCAL)  vs  Qarabag
-Atlético de Madrid     (LOCAL)  vs  Bayer Leverkusen
-Tottenham              (LOCAL)  vs  Barcelona
-Chelsea                (LOCAL)  vs  Union Saint-Gilloise
-Athletic Club          (LOCAL)  vs  Liverpool
-Slavia Praha           (LOCAL)  vs  Chelsea
-Paris Saint-Germain    (LOCAL)  vs  Bayer Leverkusen
-Atlético de Madrid     (LOCAL)  vs  Newcastle
-Tottenham              (LOCAL)  vs  Atlético de Madrid
-Monaco                 (LOCAL)  vs  Barcelona
-Bayer Leverkusen       (LOCAL)  vs  Liverpool
-Athletic Club          (LOCAL)  vs  Marseille
-Union Saint-Gilloise   (LOCAL)  vs  Real Madrid
-Atalanta               (LOCAL)  vs  Tottenham
-Slavia Praha           (LOCAL)  vs  Liverpool
 Chelsea                (LOCAL)  vs  Atlético de Madrid
-Liverpool              (LOCAL)  vs  Union Saint-Gilloise
-Barcelona              (LOCAL)  vs  Liverpool
-Atlético de Madrid     (LOCAL)  vs  Juventus
-Qarabag                (LOCAL)  vs  Real Madrid
-Bayer Leverkusen       (LOCAL)  vs  Monaco
-Paris Saint-Germain    (LOCAL)  vs  Barcelona
-Liverpool              (LOCAL)  vs  Qarabag
-Barcelona              (LOCAL)  vs  Pafos
-Atalanta               (LOCAL)  vs  Monaco
-Eintracht Frankfurt    (LOCAL)  vs  Qarabag
-PSV                    (LOCAL)  vs  Galatasaray
-Atlético de Madrid     (LOCAL)  vs  Monaco
-Benfica                (LOCAL)  vs  Slavia Praha
-Qarabag                (LOCAL)  vs  Copenhagen
-Newcastle              (LOCAL)  vs  Real Madrid
-Real Madrid            (LOCAL)  vs  Tottenham
-Liverpool              (LOCAL)  vs  Atalanta
-Juventus               (LOCAL)  vs  PSV
-Eintracht Frankfurt    (LOCAL)  vs  Union Saint-Gilloise
-Sporting CP            (LOCAL)  vs  Galatasaray
-Manchester City        (LOCAL)  vs  Union Saint-Gilloise
-Eintracht Frankfurt    (LOCAL)  vs  Slavia Praha
-Newcastle              (LOCAL)  vs  Club Brugge
-Manchester City        (LOCAL)  vs  Slavia Praha
-Arsenal                (LOCAL)  vs  Villarreal
-Arsenal                (LOCAL)  vs  Bayern München
-Atalanta               (LOCAL)  vs  PSV
-Bayer Leverkusen       (LOCAL)  vs  Inter
-Liverpool              (LOCAL)  vs  Atlético de Madrid
+Chelsea                (LOCAL)  vs  Barcelona
+Chelsea                (LOCAL)  vs  Juventus
 Real Madrid            (LOCAL)  vs  Chelsea
-Bayern München         (LOCAL)  vs  Juventus
-Real Madrid            (LOCAL)  vs  Juventus
-Bayern München         (LOCAL)  vs  Paris Saint-Germain
-Borussia Dortmund      (LOCAL)  vs  Arsenal
-Club Brugge            (LOCAL)  vs  Paris Saint-Germain
-Manchester City        (LOCAL)  vs  Atalanta
-Sporting CP            (LOCAL)  vs  PSV
-Sporting CP            (LOCAL)  vs  Villarreal
-Juventus               (LOCAL)  vs  Eintracht Frankfurt
-Marseille              (LOCAL)  vs  Arsenal
-Arsenal                (LOCAL)  vs  Olympiacos
-Villarreal             (LOCAL)  vs  PSV
-Eintracht Frankfurt    (LOCAL)  vs  Atalanta
-Galatasaray            (LOCAL)  vs  Benfica
-Copenhagen             (LOCAL)  vs  Newcastle
-PSV                    (LOCAL)  vs  Pafos
-Juventus               (LOCAL)  vs  Borussia Dortmund
-Inter                  (LOCAL)  vs  Arsenal
-Juventus               (LOCAL)  vs  Olympiacos
-Copenhagen             (LOCAL)  vs  Atalanta
-Galatasaray            (LOCAL)  vs  Eintracht Frankfurt
-Galatasaray            (LOCAL)  vs  Manchester City
-Copenhagen             (LOCAL)  vs  Chelsea
+Atlético de Madrid     (LOCAL)  vs  Manchester City
+Manchester City        (LOCAL)  vs  Monaco
+Club Brugge            (LOCAL)  vs  Manchester City
+Chelsea                (LOCAL)  vs  Eintracht Frankfurt
+Bodo/Glimt             (LOCAL)  vs  Barcelona
+Benfica                (LOCAL)  vs  Bodo/Glimt
+Union Saint-Gilloise   (LOCAL)  vs  Juventus
+Bayer Leverkusen       (LOCAL)  vs  Chelsea
+Manchester City        (LOCAL)  vs  Bayern München
+Liverpool              (LOCAL)  vs  Atlético de Madrid
+Tottenham              (LOCAL)  vs  Union Saint-Gilloise
+Eintracht Frankfurt    (LOCAL)  vs  Union Saint-Gilloise
+Borussia Dortmund      (LOCAL)  vs  Chelsea
 Monaco                 (LOCAL)  vs  Club Brugge
-Arsenal                (LOCAL)  vs  Napoli
-Manchester City        (LOCAL)  vs  Juventus
-Galatasaray            (LOCAL)  vs  Borussia Dortmund
-PSV                    (LOCAL)  vs  Bayern München
-Bodo/Glimt             (LOCAL)  vs  Galatasaray
-Borussia Dortmund      (LOCAL)  vs  Sporting CP
-Paris Saint-Germain    (LOCAL)  vs  Napoli
-Benfica                (LOCAL)  vs  Real Madrid
-Villarreal             (LOCAL)  vs  Manchester City
-Napoli                 (LOCAL)  vs  Bayern München
-Sporting CP            (LOCAL)  vs  Napoli
-Borussia Dortmund      (LOCAL)  vs  Pafos
-Copenhagen             (LOCAL)  vs  Sporting CP
-Club Brugge            (LOCAL)  vs  Borussia Dortmund
-Monaco                 (LOCAL)  vs  Olympiacos
-Ajax                   (LOCAL)  vs  Galatasaray
-Paris Saint-Germain    (LOCAL)  vs  Manchester City
-Pafos                  (LOCAL)  vs  Marseille
-Olympiacos             (LOCAL)  vs  Pafos
-Villarreal             (LOCAL)  vs  Eintracht Frankfurt
-Club Brugge            (LOCAL)  vs  Marseille
-Olympiacos             (LOCAL)  vs  Paris Saint-Germain
-Bayern München         (LOCAL)  vs  Inter
-Olympiacos             (LOCAL)  vs  Bayern München
-Real Madrid            (LOCAL)  vs  Olympiacos
-Pafos                  (LOCAL)  vs  Inter
-Inter                  (LOCAL)  vs  Sporting CP
+Villarreal             (LOCAL)  vs  Liverpool
+Manchester City        (LOCAL)  vs  Eintracht Frankfurt
+Real Madrid            (LOCAL)  vs  Bodo/Glimt
+Bodo/Glimt             (LOCAL)  vs  Bayer Leverkusen
+Inter                  (LOCAL)  vs  Union Saint-Gilloise
+Sporting CP            (LOCAL)  vs  Bodo/Glimt
+Qarabag                (LOCAL)  vs  Copenhagen
+Club Brugge            (LOCAL)  vs  Liverpool
+Liverpool              (LOCAL)  vs  Monaco
+Manchester City        (LOCAL)  vs  Athletic Club
+Qarabag                (LOCAL)  vs  Villarreal
+Copenhagen             (LOCAL)  vs  Liverpool
+Eintracht Frankfurt    (LOCAL)  vs  Bodo/Glimt
+Newcastle              (LOCAL)  vs  Union Saint-Gilloise
+Copenhagen             (LOCAL)  vs  Club Brugge
+Club Brugge            (LOCAL)  vs  Atalanta
+Atlético de Madrid     (LOCAL)  vs  PSV
+Atalanta               (LOCAL)  vs  Benfica
+Athletic Club          (LOCAL)  vs  Qarabag
+Atlético de Madrid     (LOCAL)  vs  Inter
+Napoli                 (LOCAL)  vs  Chelsea
+Marseille              (LOCAL)  vs  Manchester City
+PSV                    (LOCAL)  vs  Juventus
+Inter                  (LOCAL)  vs  Qarabag
+Inter                  (LOCAL)  vs  Benfica
+Bayern München         (LOCAL)  vs  Copenhagen
+Union Saint-Gilloise   (LOCAL)  vs  Marseille
+Tottenham              (LOCAL)  vs  Juventus
+Juventus               (LOCAL)  vs  Sporting CP
+Club Brugge            (LOCAL)  vs  Athletic Club
+Juventus               (LOCAL)  vs  Newcastle
+Liverpool              (LOCAL)  vs  Bayern München
+Newcastle              (LOCAL)  vs  Copenhagen
+Juventus               (LOCAL)  vs  Galatasaray
+Barcelona              (LOCAL)  vs  PSV
+Eintracht Frankfurt    (LOCAL)  vs  Qarabag
 Inter                  (LOCAL)  vs  Club Brugge
-PSV                    (LOCAL)  vs  Benfica
-Monaco                 (LOCAL)  vs  Benfica
-Pafos                  (LOCAL)  vs  Napoli
-Marseille              (LOCAL)  vs  Inter
-Bayern München         (LOCAL)  vs  Kairat Almaty
-Bodo/Glimt             (LOCAL)  vs  Club Brugge
-Bodo/Glimt             (LOCAL)  vs  Villarreal
-Benfica                (LOCAL)  vs  Manchester City
-Benfica                (LOCAL)  vs  Eintracht Frankfurt
-Borussia Dortmund      (LOCAL)  vs  Benfica
+Atalanta               (LOCAL)  vs  Villarreal
+Union Saint-Gilloise   (LOCAL)  vs  Arsenal
+Monaco                 (LOCAL)  vs  Bayern München
+Bodo/Glimt             (LOCAL)  vs  Borussia Dortmund
+Bayern München         (LOCAL)  vs  Qarabag
+Villarreal             (LOCAL)  vs  Inter
+Monaco                 (LOCAL)  vs  Olympiacos
+Bayern München         (LOCAL)  vs  Atlético de Madrid
+Monaco                 (LOCAL)  vs  Bayer Leverkusen
+Barcelona              (LOCAL)  vs  Tottenham
+Villarreal             (LOCAL)  vs  Newcastle
+Atalanta               (LOCAL)  vs  Monaco
+Athletic Club          (LOCAL)  vs  Benfica
+Newcastle              (LOCAL)  vs  Barcelona
+Liverpool              (LOCAL)  vs  Eintracht Frankfurt
+Galatasaray            (LOCAL)  vs  Copenhagen
+Athletic Club          (LOCAL)  vs  Liverpool
+Union Saint-Gilloise   (LOCAL)  vs  Napoli
+Marseille              (LOCAL)  vs  Atlético de Madrid
+Arsenal                (LOCAL)  vs  Monaco
+Benfica                (LOCAL)  vs  Marseille
+Bayer Leverkusen       (LOCAL)  vs  Newcastle
+Kairat Almaty          (LOCAL)  vs  Benfica
+Paris Saint-Germain    (LOCAL)  vs  Manchester City
+Arsenal                (LOCAL)  vs  Club Brugge
+PSV                    (LOCAL)  vs  Tottenham
+Sporting CP            (LOCAL)  vs  Galatasaray
+Newcastle              (LOCAL)  vs  PSV
+Juventus               (LOCAL)  vs  Ajax
+Atalanta               (LOCAL)  vs  Sporting CP
+Kairat Almaty          (LOCAL)  vs  Barcelona
+Olympiacos             (LOCAL)  vs  Real Madrid
+Slavia Praha           (LOCAL)  vs  Villarreal
+Galatasaray            (LOCAL)  vs  Bayer Leverkusen
+Qarabag                (LOCAL)  vs  Arsenal
+Olympiacos             (LOCAL)  vs  Atalanta
+Galatasaray            (LOCAL)  vs  Atalanta
+Sporting CP            (LOCAL)  vs  Bayer Leverkusen
+Bodo/Glimt             (LOCAL)  vs  Napoli
+Galatasaray            (LOCAL)  vs  Inter
+Olympiacos             (LOCAL)  vs  Tottenham
+Barcelona              (LOCAL)  vs  Ajax
+Copenhagen             (LOCAL)  vs  Borussia Dortmund
+Tottenham              (LOCAL)  vs  Real Madrid
+Sporting CP            (LOCAL)  vs  Real Madrid
+Copenhagen             (LOCAL)  vs  Arsenal
+Barcelona              (LOCAL)  vs  Marseille
+Real Madrid            (LOCAL)  vs  Newcastle
+Bayer Leverkusen       (LOCAL)  vs  Tottenham
+Olympiacos             (LOCAL)  vs  Athletic Club
+PSV                    (LOCAL)  vs  Bayern München
+Qarabag                (LOCAL)  vs  Napoli
+PSV                    (LOCAL)  vs  Marseille
+Marseille              (LOCAL)  vs  Olympiacos
+Kairat Almaty          (LOCAL)  vs  Olympiacos
+Villarreal             (LOCAL)  vs  Pafos
+Eintracht Frankfurt    (LOCAL)  vs  Slavia Praha
 Ajax                   (LOCAL)  vs  Sporting CP
-Napoli                 (LOCAL)  vs  Marseille
-Villarreal             (LOCAL)  vs  Ajax
-Kairat Almaty          (LOCAL)  vs  Villarreal
-Pafos                  (LOCAL)  vs  Ajax
-Club Brugge            (LOCAL)  vs  Kairat Almaty
-Bodo/Glimt             (LOCAL)  vs  Copenhagen
-Inter                  (LOCAL)  vs  Kairat Almaty
-Marseille              (LOCAL)  vs  Kairat Almaty
-Olympiacos             (LOCAL)  vs  Bodo/Glimt
-Napoli                 (LOCAL)  vs  Ajax
-Ajax                   (LOCAL)  vs  Borussia Dortmund
-Marseille              (LOCAL)  vs  Bodo/Glimt
-Ajax                   (LOCAL)  vs  Copenhagen
-Kairat Almaty          (LOCAL)  vs  Copenhagen
-Napoli                 (LOCAL)  vs  Bodo/Glimt
-Kairat Almaty          (LOCAL)  vs  Ajax
-Kairat Almaty          (LOCAL)  vs  Bodo/Glimt
+Bayer Leverkusen       (LOCAL)  vs  Ajax
+Athletic Club          (LOCAL)  vs  Arsenal
+Kairat Almaty          (LOCAL)  vs  Real Madrid
+Borussia Dortmund      (LOCAL)  vs  Sporting CP
+Ajax                   (LOCAL)  vs  Galatasaray
+Benfica                (LOCAL)  vs  Paris Saint-Germain
+Benfica                (LOCAL)  vs  Napoli
+Slavia Praha           (LOCAL)  vs  Inter
+Napoli                 (LOCAL)  vs  Villarreal
+Atlético de Madrid     (LOCAL)  vs  Paris Saint-Germain
+Tottenham              (LOCAL)  vs  Borussia Dortmund
+Real Madrid            (LOCAL)  vs  Ajax
+Borussia Dortmund      (LOCAL)  vs  Athletic Club
+Arsenal                (LOCAL)  vs  Slavia Praha
+Pafos                  (LOCAL)  vs  PSV
+Pafos                  (LOCAL)  vs  Eintracht Frankfurt
+Pafos                  (LOCAL)  vs  Olympiacos
+Ajax                   (LOCAL)  vs  Kairat Almaty
+Ajax                   (LOCAL)  vs  Slavia Praha
+Marseille              (LOCAL)  vs  Slavia Praha
+Paris Saint-Germain    (LOCAL)  vs  Galatasaray
+Slavia Praha           (LOCAL)  vs  Kairat Almaty
+Bayern München         (LOCAL)  vs  Paris Saint-Germain
+Paris Saint-Germain    (LOCAL)  vs  Atalanta
+Borussia Dortmund      (LOCAL)  vs  Kairat Almaty
+Pafos                  (LOCAL)  vs  Kairat Almaty
+Napoli                 (LOCAL)  vs  Borussia Dortmund
+Arsenal                (LOCAL)  vs  Pafos
+Slavia Praha           (LOCAL)  vs  Paris Saint-Germain
+Napoli                 (LOCAL)  vs  Pafos
+Paris Saint-Germain    (LOCAL)  vs  Pafos
 
 TOTAL PARTIDOS: 144
 === VERIFICANDO PARTIDOS ===
@@ -582,3 +618,369 @@ TOTAL PARTIDOS: 144
 ✔ Todos tienen 4 casa / 4 fuera
 
 === FIN VERIFICACIÓN ===
+
+====================================
+    PARTIDOS POR EQUIPO (FORMATO LIMPIO)
+====================================
+
+────────── Ajax ──────────
+Ajax  -  Galatasaray   (LOCAL Ajax)
+Ajax  -  Kairat Almaty   (LOCAL Ajax)
+Ajax  -  Slavia Praha   (LOCAL Ajax)
+Ajax  -  Sporting CP   (LOCAL Ajax)
+Barcelona  -  Ajax   (LOCAL Barcelona)
+Bayer Leverkusen  -  Ajax   (LOCAL Bayer Leverkusen)
+Juventus  -  Ajax   (LOCAL Juventus)
+Real Madrid  -  Ajax   (LOCAL Real Madrid)
+
+────────── Arsenal ──────────
+Arsenal  -  Club Brugge   (LOCAL Arsenal)
+Arsenal  -  Monaco   (LOCAL Arsenal)
+Arsenal  -  Pafos   (LOCAL Arsenal)
+Arsenal  -  Slavia Praha   (LOCAL Arsenal)
+Athletic Club  -  Arsenal   (LOCAL Athletic Club)
+Copenhagen  -  Arsenal   (LOCAL Copenhagen)
+Qarabag  -  Arsenal   (LOCAL Qarabag)
+Union Saint-Gilloise  -  Arsenal   (LOCAL Union Saint-Gilloise)
+
+────────── Atalanta ──────────
+Atalanta  -  Benfica   (LOCAL Atalanta)
+Atalanta  -  Monaco   (LOCAL Atalanta)
+Atalanta  -  Sporting CP   (LOCAL Atalanta)
+Atalanta  -  Villarreal   (LOCAL Atalanta)
+Club Brugge  -  Atalanta   (LOCAL Club Brugge)
+Galatasaray  -  Atalanta   (LOCAL Galatasaray)
+Olympiacos  -  Atalanta   (LOCAL Olympiacos)
+Paris Saint-Germain  -  Atalanta   (LOCAL Paris Saint-Germain)
+
+────────── Athletic Club ──────────
+Athletic Club  -  Arsenal   (LOCAL Athletic Club)
+Athletic Club  -  Benfica   (LOCAL Athletic Club)
+Athletic Club  -  Liverpool   (LOCAL Athletic Club)
+Athletic Club  -  Qarabag   (LOCAL Athletic Club)
+Borussia Dortmund  -  Athletic Club   (LOCAL Borussia Dortmund)
+Club Brugge  -  Athletic Club   (LOCAL Club Brugge)
+Manchester City  -  Athletic Club   (LOCAL Manchester City)
+Olympiacos  -  Athletic Club   (LOCAL Olympiacos)
+
+────────── Atlético de Madrid ──────────
+Atlético de Madrid  -  Inter   (LOCAL Atlético de Madrid)
+Atlético de Madrid  -  Manchester City   (LOCAL Atlético de Madrid)
+Atlético de Madrid  -  PSV   (LOCAL Atlético de Madrid)
+Atlético de Madrid  -  Paris Saint-Germain   (LOCAL Atlético de Madrid)
+Bayern München  -  Atlético de Madrid   (LOCAL Bayern München)
+Chelsea  -  Atlético de Madrid   (LOCAL Chelsea)
+Liverpool  -  Atlético de Madrid   (LOCAL Liverpool)
+Marseille  -  Atlético de Madrid   (LOCAL Marseille)
+
+────────── Barcelona ──────────
+Barcelona  -  Ajax   (LOCAL Barcelona)
+Barcelona  -  Marseille   (LOCAL Barcelona)
+Barcelona  -  PSV   (LOCAL Barcelona)
+Barcelona  -  Tottenham   (LOCAL Barcelona)
+Bodo/Glimt  -  Barcelona   (LOCAL Bodo/Glimt)
+Chelsea  -  Barcelona   (LOCAL Chelsea)
+Kairat Almaty  -  Barcelona   (LOCAL Kairat Almaty)
+Newcastle  -  Barcelona   (LOCAL Newcastle)
+
+────────── Bayer Leverkusen ──────────
+Bayer Leverkusen  -  Ajax   (LOCAL Bayer Leverkusen)
+Bayer Leverkusen  -  Chelsea   (LOCAL Bayer Leverkusen)
+Bayer Leverkusen  -  Newcastle   (LOCAL Bayer Leverkusen)
+Bayer Leverkusen  -  Tottenham   (LOCAL Bayer Leverkusen)
+Bodo/Glimt  -  Bayer Leverkusen   (LOCAL Bodo/Glimt)
+Galatasaray  -  Bayer Leverkusen   (LOCAL Galatasaray)
+Monaco  -  Bayer Leverkusen   (LOCAL Monaco)
+Sporting CP  -  Bayer Leverkusen   (LOCAL Sporting CP)
+
+────────── Bayern München ──────────
+Bayern München  -  Atlético de Madrid   (LOCAL Bayern München)
+Bayern München  -  Copenhagen   (LOCAL Bayern München)
+Bayern München  -  Paris Saint-Germain   (LOCAL Bayern München)
+Bayern München  -  Qarabag   (LOCAL Bayern München)
+Liverpool  -  Bayern München   (LOCAL Liverpool)
+Manchester City  -  Bayern München   (LOCAL Manchester City)
+Monaco  -  Bayern München   (LOCAL Monaco)
+PSV  -  Bayern München   (LOCAL PSV)
+
+────────── Benfica ──────────
+Atalanta  -  Benfica   (LOCAL Atalanta)
+Athletic Club  -  Benfica   (LOCAL Athletic Club)
+Benfica  -  Bodo/Glimt   (LOCAL Benfica)
+Benfica  -  Marseille   (LOCAL Benfica)
+Benfica  -  Napoli   (LOCAL Benfica)
+Benfica  -  Paris Saint-Germain   (LOCAL Benfica)
+Inter  -  Benfica   (LOCAL Inter)
+Kairat Almaty  -  Benfica   (LOCAL Kairat Almaty)
+
+────────── Bodo/Glimt ──────────
+Benfica  -  Bodo/Glimt   (LOCAL Benfica)
+Bodo/Glimt  -  Barcelona   (LOCAL Bodo/Glimt)
+Bodo/Glimt  -  Bayer Leverkusen   (LOCAL Bodo/Glimt)
+Bodo/Glimt  -  Borussia Dortmund   (LOCAL Bodo/Glimt)
+Bodo/Glimt  -  Napoli   (LOCAL Bodo/Glimt)
+Eintracht Frankfurt  -  Bodo/Glimt   (LOCAL Eintracht Frankfurt)
+Real Madrid  -  Bodo/Glimt   (LOCAL Real Madrid)
+Sporting CP  -  Bodo/Glimt   (LOCAL Sporting CP)
+
+────────── Borussia Dortmund ──────────
+Bodo/Glimt  -  Borussia Dortmund   (LOCAL Bodo/Glimt)
+Borussia Dortmund  -  Athletic Club   (LOCAL Borussia Dortmund)
+Borussia Dortmund  -  Chelsea   (LOCAL Borussia Dortmund)
+Borussia Dortmund  -  Kairat Almaty   (LOCAL Borussia Dortmund)
+Borussia Dortmund  -  Sporting CP   (LOCAL Borussia Dortmund)
+Copenhagen  -  Borussia Dortmund   (LOCAL Copenhagen)
+Napoli  -  Borussia Dortmund   (LOCAL Napoli)
+Tottenham  -  Borussia Dortmund   (LOCAL Tottenham)
+
+────────── Chelsea ──────────
+Bayer Leverkusen  -  Chelsea   (LOCAL Bayer Leverkusen)
+Borussia Dortmund  -  Chelsea   (LOCAL Borussia Dortmund)
+Chelsea  -  Atlético de Madrid   (LOCAL Chelsea)
+Chelsea  -  Barcelona   (LOCAL Chelsea)
+Chelsea  -  Eintracht Frankfurt   (LOCAL Chelsea)
+Chelsea  -  Juventus   (LOCAL Chelsea)
+Napoli  -  Chelsea   (LOCAL Napoli)
+Real Madrid  -  Chelsea   (LOCAL Real Madrid)
+
+────────── Club Brugge ──────────
+Arsenal  -  Club Brugge   (LOCAL Arsenal)
+Club Brugge  -  Atalanta   (LOCAL Club Brugge)
+Club Brugge  -  Athletic Club   (LOCAL Club Brugge)
+Club Brugge  -  Liverpool   (LOCAL Club Brugge)
+Club Brugge  -  Manchester City   (LOCAL Club Brugge)
+Copenhagen  -  Club Brugge   (LOCAL Copenhagen)
+Inter  -  Club Brugge   (LOCAL Inter)
+Monaco  -  Club Brugge   (LOCAL Monaco)
+
+────────── Copenhagen ──────────
+Bayern München  -  Copenhagen   (LOCAL Bayern München)
+Copenhagen  -  Arsenal   (LOCAL Copenhagen)
+Copenhagen  -  Borussia Dortmund   (LOCAL Copenhagen)
+Copenhagen  -  Club Brugge   (LOCAL Copenhagen)
+Copenhagen  -  Liverpool   (LOCAL Copenhagen)
+Galatasaray  -  Copenhagen   (LOCAL Galatasaray)
+Newcastle  -  Copenhagen   (LOCAL Newcastle)
+Qarabag  -  Copenhagen   (LOCAL Qarabag)
+
+────────── Eintracht Frankfurt ──────────
+Chelsea  -  Eintracht Frankfurt   (LOCAL Chelsea)
+Eintracht Frankfurt  -  Bodo/Glimt   (LOCAL Eintracht Frankfurt)
+Eintracht Frankfurt  -  Qarabag   (LOCAL Eintracht Frankfurt)
+Eintracht Frankfurt  -  Slavia Praha   (LOCAL Eintracht Frankfurt)
+Eintracht Frankfurt  -  Union Saint-Gilloise   (LOCAL Eintracht Frankfurt)
+Liverpool  -  Eintracht Frankfurt   (LOCAL Liverpool)
+Manchester City  -  Eintracht Frankfurt   (LOCAL Manchester City)
+Pafos  -  Eintracht Frankfurt   (LOCAL Pafos)
+
+────────── Galatasaray ──────────
+Ajax  -  Galatasaray   (LOCAL Ajax)
+Galatasaray  -  Atalanta   (LOCAL Galatasaray)
+Galatasaray  -  Bayer Leverkusen   (LOCAL Galatasaray)
+Galatasaray  -  Copenhagen   (LOCAL Galatasaray)
+Galatasaray  -  Inter   (LOCAL Galatasaray)
+Juventus  -  Galatasaray   (LOCAL Juventus)
+Paris Saint-Germain  -  Galatasaray   (LOCAL Paris Saint-Germain)
+Sporting CP  -  Galatasaray   (LOCAL Sporting CP)
+
+────────── Inter ──────────
+Atlético de Madrid  -  Inter   (LOCAL Atlético de Madrid)
+Galatasaray  -  Inter   (LOCAL Galatasaray)
+Inter  -  Benfica   (LOCAL Inter)
+Inter  -  Club Brugge   (LOCAL Inter)
+Inter  -  Qarabag   (LOCAL Inter)
+Inter  -  Union Saint-Gilloise   (LOCAL Inter)
+Slavia Praha  -  Inter   (LOCAL Slavia Praha)
+Villarreal  -  Inter   (LOCAL Villarreal)
+
+────────── Juventus ──────────
+Chelsea  -  Juventus   (LOCAL Chelsea)
+Juventus  -  Ajax   (LOCAL Juventus)
+Juventus  -  Galatasaray   (LOCAL Juventus)
+Juventus  -  Newcastle   (LOCAL Juventus)
+Juventus  -  Sporting CP   (LOCAL Juventus)
+PSV  -  Juventus   (LOCAL PSV)
+Tottenham  -  Juventus   (LOCAL Tottenham)
+Union Saint-Gilloise  -  Juventus   (LOCAL Union Saint-Gilloise)
+
+────────── Kairat Almaty ──────────
+Ajax  -  Kairat Almaty   (LOCAL Ajax)
+Borussia Dortmund  -  Kairat Almaty   (LOCAL Borussia Dortmund)
+Kairat Almaty  -  Barcelona   (LOCAL Kairat Almaty)
+Kairat Almaty  -  Benfica   (LOCAL Kairat Almaty)
+Kairat Almaty  -  Olympiacos   (LOCAL Kairat Almaty)
+Kairat Almaty  -  Real Madrid   (LOCAL Kairat Almaty)
+Pafos  -  Kairat Almaty   (LOCAL Pafos)
+Slavia Praha  -  Kairat Almaty   (LOCAL Slavia Praha)
+
+────────── Liverpool ──────────
+Athletic Club  -  Liverpool   (LOCAL Athletic Club)
+Club Brugge  -  Liverpool   (LOCAL Club Brugge)
+Copenhagen  -  Liverpool   (LOCAL Copenhagen)
+Liverpool  -  Atlético de Madrid   (LOCAL Liverpool)
+Liverpool  -  Bayern München   (LOCAL Liverpool)
+Liverpool  -  Eintracht Frankfurt   (LOCAL Liverpool)
+Liverpool  -  Monaco   (LOCAL Liverpool)
+Villarreal  -  Liverpool   (LOCAL Villarreal)
+
+────────── Manchester City ──────────
+Atlético de Madrid  -  Manchester City   (LOCAL Atlético de Madrid)
+Club Brugge  -  Manchester City   (LOCAL Club Brugge)
+Manchester City  -  Athletic Club   (LOCAL Manchester City)
+Manchester City  -  Bayern München   (LOCAL Manchester City)
+Manchester City  -  Eintracht Frankfurt   (LOCAL Manchester City)
+Manchester City  -  Monaco   (LOCAL Manchester City)
+Marseille  -  Manchester City   (LOCAL Marseille)
+Paris Saint-Germain  -  Manchester City   (LOCAL Paris Saint-Germain)
+
+────────── Marseille ──────────
+Barcelona  -  Marseille   (LOCAL Barcelona)
+Benfica  -  Marseille   (LOCAL Benfica)
+Marseille  -  Atlético de Madrid   (LOCAL Marseille)
+Marseille  -  Manchester City   (LOCAL Marseille)
+Marseille  -  Olympiacos   (LOCAL Marseille)
+Marseille  -  Slavia Praha   (LOCAL Marseille)
+PSV  -  Marseille   (LOCAL PSV)
+Union Saint-Gilloise  -  Marseille   (LOCAL Union Saint-Gilloise)
+
+────────── Monaco ──────────
+Arsenal  -  Monaco   (LOCAL Arsenal)
+Atalanta  -  Monaco   (LOCAL Atalanta)
+Liverpool  -  Monaco   (LOCAL Liverpool)
+Manchester City  -  Monaco   (LOCAL Manchester City)
+Monaco  -  Bayer Leverkusen   (LOCAL Monaco)
+Monaco  -  Bayern München   (LOCAL Monaco)
+Monaco  -  Club Brugge   (LOCAL Monaco)
+Monaco  -  Olympiacos   (LOCAL Monaco)
+
+────────── Napoli ──────────
+Benfica  -  Napoli   (LOCAL Benfica)
+Bodo/Glimt  -  Napoli   (LOCAL Bodo/Glimt)
+Napoli  -  Borussia Dortmund   (LOCAL Napoli)
+Napoli  -  Chelsea   (LOCAL Napoli)
+Napoli  -  Pafos   (LOCAL Napoli)
+Napoli  -  Villarreal   (LOCAL Napoli)
+Qarabag  -  Napoli   (LOCAL Qarabag)
+Union Saint-Gilloise  -  Napoli   (LOCAL Union Saint-Gilloise)
+
+────────── Newcastle ──────────
+Bayer Leverkusen  -  Newcastle   (LOCAL Bayer Leverkusen)
+Juventus  -  Newcastle   (LOCAL Juventus)
+Newcastle  -  Barcelona   (LOCAL Newcastle)
+Newcastle  -  Copenhagen   (LOCAL Newcastle)
+Newcastle  -  PSV   (LOCAL Newcastle)
+Newcastle  -  Union Saint-Gilloise   (LOCAL Newcastle)
+Real Madrid  -  Newcastle   (LOCAL Real Madrid)
+Villarreal  -  Newcastle   (LOCAL Villarreal)
+
+────────── Olympiacos ──────────
+Kairat Almaty  -  Olympiacos   (LOCAL Kairat Almaty)
+Marseille  -  Olympiacos   (LOCAL Marseille)
+Monaco  -  Olympiacos   (LOCAL Monaco)
+Olympiacos  -  Atalanta   (LOCAL Olympiacos)
+Olympiacos  -  Athletic Club   (LOCAL Olympiacos)
+Olympiacos  -  Real Madrid   (LOCAL Olympiacos)
+Olympiacos  -  Tottenham   (LOCAL Olympiacos)
+Pafos  -  Olympiacos   (LOCAL Pafos)
+
+────────── PSV ──────────
+Atlético de Madrid  -  PSV   (LOCAL Atlético de Madrid)
+Barcelona  -  PSV   (LOCAL Barcelona)
+Newcastle  -  PSV   (LOCAL Newcastle)
+PSV  -  Bayern München   (LOCAL PSV)
+PSV  -  Juventus   (LOCAL PSV)
+PSV  -  Marseille   (LOCAL PSV)
+PSV  -  Tottenham   (LOCAL PSV)
+Pafos  -  PSV   (LOCAL Pafos)
+
+────────── Pafos ──────────
+Arsenal  -  Pafos   (LOCAL Arsenal)
+Napoli  -  Pafos   (LOCAL Napoli)
+Pafos  -  Eintracht Frankfurt   (LOCAL Pafos)
+Pafos  -  Kairat Almaty   (LOCAL Pafos)
+Pafos  -  Olympiacos   (LOCAL Pafos)
+Pafos  -  PSV   (LOCAL Pafos)
+Paris Saint-Germain  -  Pafos   (LOCAL Paris Saint-Germain)
+Villarreal  -  Pafos   (LOCAL Villarreal)
+
+────────── Paris Saint-Germain ──────────
+Atlético de Madrid  -  Paris Saint-Germain   (LOCAL Atlético de Madrid)
+Bayern München  -  Paris Saint-Germain   (LOCAL Bayern München)
+Benfica  -  Paris Saint-Germain   (LOCAL Benfica)
+Paris Saint-Germain  -  Atalanta   (LOCAL Paris Saint-Germain)
+Paris Saint-Germain  -  Galatasaray   (LOCAL Paris Saint-Germain)
+Paris Saint-Germain  -  Manchester City   (LOCAL Paris Saint-Germain)
+Paris Saint-Germain  -  Pafos   (LOCAL Paris Saint-Germain)
+Slavia Praha  -  Paris Saint-Germain   (LOCAL Slavia Praha)
+
+────────── Qarabag ──────────
+Athletic Club  -  Qarabag   (LOCAL Athletic Club)
+Bayern München  -  Qarabag   (LOCAL Bayern München)
+Eintracht Frankfurt  -  Qarabag   (LOCAL Eintracht Frankfurt)
+Inter  -  Qarabag   (LOCAL Inter)
+Qarabag  -  Arsenal   (LOCAL Qarabag)
+Qarabag  -  Copenhagen   (LOCAL Qarabag)
+Qarabag  -  Napoli   (LOCAL Qarabag)
+Qarabag  -  Villarreal   (LOCAL Qarabag)
+
+────────── Real Madrid ──────────
+Kairat Almaty  -  Real Madrid   (LOCAL Kairat Almaty)
+Olympiacos  -  Real Madrid   (LOCAL Olympiacos)
+Real Madrid  -  Ajax   (LOCAL Real Madrid)
+Real Madrid  -  Bodo/Glimt   (LOCAL Real Madrid)
+Real Madrid  -  Chelsea   (LOCAL Real Madrid)
+Real Madrid  -  Newcastle   (LOCAL Real Madrid)
+Sporting CP  -  Real Madrid   (LOCAL Sporting CP)
+Tottenham  -  Real Madrid   (LOCAL Tottenham)
+
+────────── Slavia Praha ──────────
+Ajax  -  Slavia Praha   (LOCAL Ajax)
+Arsenal  -  Slavia Praha   (LOCAL Arsenal)
+Eintracht Frankfurt  -  Slavia Praha   (LOCAL Eintracht Frankfurt)
+Marseille  -  Slavia Praha   (LOCAL Marseille)
+Slavia Praha  -  Inter   (LOCAL Slavia Praha)
+Slavia Praha  -  Kairat Almaty   (LOCAL Slavia Praha)
+Slavia Praha  -  Paris Saint-Germain   (LOCAL Slavia Praha)
+Slavia Praha  -  Villarreal   (LOCAL Slavia Praha)
+
+────────── Sporting CP ──────────
+Ajax  -  Sporting CP   (LOCAL Ajax)
+Atalanta  -  Sporting CP   (LOCAL Atalanta)
+Borussia Dortmund  -  Sporting CP   (LOCAL Borussia Dortmund)
+Juventus  -  Sporting CP   (LOCAL Juventus)
+Sporting CP  -  Bayer Leverkusen   (LOCAL Sporting CP)
+Sporting CP  -  Bodo/Glimt   (LOCAL Sporting CP)
+Sporting CP  -  Galatasaray   (LOCAL Sporting CP)
+Sporting CP  -  Real Madrid   (LOCAL Sporting CP)
+
+────────── Tottenham ──────────
+Barcelona  -  Tottenham   (LOCAL Barcelona)
+Bayer Leverkusen  -  Tottenham   (LOCAL Bayer Leverkusen)
+Olympiacos  -  Tottenham   (LOCAL Olympiacos)
+PSV  -  Tottenham   (LOCAL PSV)
+Tottenham  -  Borussia Dortmund   (LOCAL Tottenham)
+Tottenham  -  Juventus   (LOCAL Tottenham)
+Tottenham  -  Real Madrid   (LOCAL Tottenham)
+Tottenham  -  Union Saint-Gilloise   (LOCAL Tottenham)
+
+────────── Union Saint-Gilloise ──────────
+Eintracht Frankfurt  -  Union Saint-Gilloise   (LOCAL Eintracht Frankfurt)
+Inter  -  Union Saint-Gilloise   (LOCAL Inter)
+Newcastle  -  Union Saint-Gilloise   (LOCAL Newcastle)
+Tottenham  -  Union Saint-Gilloise   (LOCAL Tottenham)
+Union Saint-Gilloise  -  Arsenal   (LOCAL Union Saint-Gilloise)
+Union Saint-Gilloise  -  Juventus   (LOCAL Union Saint-Gilloise)
+Union Saint-Gilloise  -  Marseille   (LOCAL Union Saint-Gilloise)
+Union Saint-Gilloise  -  Napoli   (LOCAL Union Saint-Gilloise)
+
+────────── Villarreal ──────────
+Atalanta  -  Villarreal   (LOCAL Atalanta)
+Napoli  -  Villarreal   (LOCAL Napoli)
+Qarabag  -  Villarreal   (LOCAL Qarabag)
+Slavia Praha  -  Villarreal   (LOCAL Slavia Praha)
+Villarreal  -  Inter   (LOCAL Villarreal)
+Villarreal  -  Liverpool   (LOCAL Villarreal)
+Villarreal  -  Newcastle   (LOCAL Villarreal)
+Villarreal  -  Pafos   (LOCAL Villarreal)
+
+PS C:\Users\Antonio\Documents\TFG\champions-legue-predictor> 

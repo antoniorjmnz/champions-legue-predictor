@@ -1,4 +1,3 @@
-# data.py
 """Generación de bombos aleatorios + creación de objetos Team."""
 
 import random

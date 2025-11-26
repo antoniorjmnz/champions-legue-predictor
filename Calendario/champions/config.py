@@ -1,4 +1,3 @@
-# config.py
 """Parámetros del sorteo y lista de equipos de la temporada 2025-2026."""
 
 # Número de rivales por equipo

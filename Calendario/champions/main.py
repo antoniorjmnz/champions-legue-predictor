@@ -1,15 +1,18 @@
-# main.py
 """Punto de entrada: ejecuta el sorteo y muestra el resultado por pantalla."""
 
 from solver import search, calls
 from state import teams, adj, deg, pot_count
-from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
-from state import teams
-from data import generar_bombos_aleatorios
-from fixtures import generar_partidos_unicos, asignar_local_visitante, print_partidos_bonitos, print_partidos_por_equipo_ordenados
+from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY, MAX_RIVALS_PER_COUNTRY
+from data import generar_bombos_aleatorios  # (no se usa directamente, pero lo dejamos)
+from fixtures import (
+    generar_partidos_unicos,
+    asignar_local_visitante,
+    print_partidos_bonitos,
+    print_partidos_por_equipo_ordenados,
+)
 from league_calendar import generate_league_calendar, print_calendar
 from verificador_partidos import verificar_partidos
-from verificar_calendario import verificar_calendario
+from verificar_calendario import verificar_calendario as verificar_calendario_bloques
 
 
 def mostrar_bombos():
@@ -29,7 +32,7 @@ def mostrar_bombos():
 
 
 def check_constraints() -> bool:
-    """Verifica que todos los equipos cumplen las restricciones."""
+    """Verifica que todos los equipos cumplen las restricciones básicas (8 rivales, 2 por bombo)."""
     ok = True
     for i, t in enumerate(teams):
         if deg[i] != N_MATCHES:
@@ -71,6 +74,15 @@ def print_diagnostics():
         for c in rival_countries:
             country_count_map[c] = country_count_map.get(c, 0) + 1
 
+        # Máx. rivales de un mismo país extranjero
+        worst_country = None
+        max_foreign = 0
+        for c, cnt in country_count_map.items():
+            if c != country and cnt > max_foreign:
+                max_foreign = cnt
+                worst_country = c
+        ok_foreign = (max_foreign <= MAX_RIVALS_PER_COUNTRY) if worst_country else True
+
         # Conteo por bombo
         pot_count_map = {}
         for p in rival_pots:
@@ -89,16 +101,26 @@ def print_diagnostics():
             f"{'✔' if ok_same_country else '❌'}"
         )
         print(f"   ➤ Rivales por país: {country_count_map}")
+
+        if worst_country:
+            print(
+                f"   ➤ Máx. rivales de un país extranjero: "
+                f"{max_foreign} de {worst_country} "
+                f"(límite {MAX_RIVALS_PER_COUNTRY}) "
+                f"{'✔' if ok_foreign else '❌'}"
+            )
+        else:
+            print(
+                f"   ➤ Máx. rivales de un país extranjero: 0 "
+                f"(límite {MAX_RIVALS_PER_COUNTRY}) ✔"
+            )
+
         print(f"   ➤ Rivales por bombo: {pot_count_map}")
 
         print(f"   ➤ {N_MATCHES} rivales obligatorios: {'✔' if ok_deg else '❌'}")
         print(f"   ➤ {PER_POT} por bombo: {'✔' if ok_by_pot else '❌'}")
 
         print("----------------------------------------------------")
-
-
-
-
 
 
 def main():
@@ -112,19 +134,24 @@ def main():
         return
 
     ok = check_constraints()
-    print("¿Restricciones correctas?:", ok)
+    print("¿Restricciones básicas correctas?:", ok)
     print_diagnostics()
 
-    # NUEVO: generar emparejamientos únicos
+    # Generar emparejamientos únicos
     partidos_sin_orientar = generar_partidos_unicos()
 
     # Asignar local/visitante (4 casa / 4 fuera)
     partidos_finales = asignar_local_visitante(partidos_sin_orientar)
 
-    # Imprimir
+    # Imprimir lista global + verificación de 4/4 e ida/vuelta
     print_partidos_bonitos(partidos_finales)
     verificar_partidos(partidos_finales)
     print_partidos_por_equipo_ordenados(partidos_finales)
+
+    # OPCIONAL: generar calendario por jornadas/bloques UEFA
+    # calendario = generate_league_calendar(partidos_finales)
+    # print_calendar(calendario)
+    # verificar_calendario_bloques(calendario)
 
 
 if __name__ == "__main__":

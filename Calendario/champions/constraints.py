@@ -1,6 +1,6 @@
-# constraints.py
 from state import teams, adj, deg, pot_count, country_count
-from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
+from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY, MAX_RIVALS_PER_COUNTRY
+
 
 def compute_candidates(i: int):
     """
@@ -9,8 +9,9 @@ def compute_candidates(i: int):
         ❌ no repetir rival
         ❌ no exceder 8 rivales
         ❌ no contra equipos del mismo país (regla Champions)
-        ❌ no exceder el límite por bombo
-        ❌ no crear conflicto con rivales futuros
+        ❌ no exceder el límite por bombo (2 por bombo)
+        ❌ no exceder el límite de rivales por país extranjero (máx. 3)
+        ❌ no crear conflicto con rivales futuros (forward checking básico)
     """
 
     candidates = []
@@ -32,7 +33,7 @@ def compute_candidates(i: int):
             continue
 
         # 3. REGLA IMPORTANTE DEL PROFESOR:
-        #    NO SE PUEDE JUGAR CONTRA EQUIPOS DEL MISMO PAIS
+        #    NO SE PUEDE JUGAR CONTRA EQUIPOS DEL MISMO PAÍS
         if teams[j].country == country_i:
             continue
 
@@ -43,12 +44,18 @@ def compute_candidates(i: int):
         if pot_count[j][pot_i] >= PER_POT:
             continue
 
+        # 4.b) no exceder el límite de rivales de un mismo país extranjero (máx. 3)
+        country_j = teams[j].country
+        if country_count[i][country_j] >= MAX_RIVALS_PER_COUNTRY:
+            continue
+        if country_count[j][country_i] >= MAX_RIVALS_PER_COUNTRY:
+            continue
+
         # 5. "forward checking" básico:
         #    ambos equipos deben poder completar 8 rivales
         restantes_i = N_MATCHES - deg[i]
         restantes_j = N_MATCHES - deg[j]
 
-        # equipos aún disponibles sin país propio y sin sobrepasar bombo
         posibles_i = sum(
             1
             for k in range(len(teams))

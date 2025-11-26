@@ -1,4 +1,3 @@
-# state.py
 """Estado global del sorteo: adyacencias, grados y contadores auxiliares."""
 
 from collections import defaultdict
@@ -18,7 +17,7 @@ deg = [0] * n
 # pot_count[i][p] = rivales del bombo p
 pot_count = [[0] * 5 for _ in range(n)]  # índice 0 no usado
 
-# Rivales del mismo país
+# country_count[i][country] = nº de rivales de ese país (sea propio o extranjero)
 country_count = [defaultdict(int) for _ in range(n)]
 
 # Número total de emparejamientos
@@ -37,10 +36,10 @@ def add_edge(i: int, j: int) -> None:
     pot_count[i][pj] += 1
     pot_count[j][pi] += 1
 
+    # Contamos SIEMPRE el país del rival
     ci, cj = teams[i].country, teams[j].country
-    if ci == cj:
-        country_count[i][ci] += 1
-        country_count[j][cj] += 1
+    country_count[i][cj] += 1
+    country_count[j][ci] += 1
 
 
 def remove_edge(i: int, j: int) -> None:
@@ -58,6 +57,5 @@ def remove_edge(i: int, j: int) -> None:
     pot_count[j][pi] -= 1
 
     ci, cj = teams[i].country, teams[j].country
-    if ci == cj:
-        country_count[i][ci] -= 1
-        country_count[j][cj] -= 1
+    country_count[i][cj] -= 1
+    country_count[j][ci] -= 1
