@@ -6,9 +6,9 @@ from state import teams, adj, deg, pot_count
 from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
 from state import teams
 from data import generar_bombos_aleatorios
-from fixtures import generar_partidos_unicos_ida_vuelta, print_partidos_bonitos
+from fixtures import generar_partidos_unicos, asignar_local_visitante, print_partidos_bonitos, print_partidos_por_equipo_ordenados
 from league_calendar import generate_league_calendar, print_calendar
-
+from verificador_partidos import verificar_partidos
 from verificar_calendario import verificar_calendario
 
 
@@ -100,6 +100,7 @@ def print_diagnostics():
 
 
 
+
 def main():
     print("Generando sorteo determinista con bombos aleatorios...")
     mostrar_bombos()
@@ -107,22 +108,24 @@ def main():
     print("¿Solución encontrada?:", found, "| Llamadas recursivas:", calls)
 
     if not found:
-        print("❌ No se encontró solución para estos bombos.")
+        print("❌ No se encontró solución.")
         return
 
     ok = check_constraints()
     print("¿Restricciones correctas?:", ok)
-
-    print("\nRESULTADO FINAL:\n")
-    for i, t in enumerate(teams):
-        rivals = sorted([teams[j].name for j in adj[i]])
-        print(f"{t.name:22s} ({t.country}, B{t.pot}) -> {rivals}")
     print_diagnostics()
 
-    # 🆕 AQUI generamos ida+vuelta
-    partidos = generar_partidos_unicos_ida_vuelta()
+    # NUEVO: generar emparejamientos únicos
+    partidos_sin_orientar = generar_partidos_unicos()
 
-    print_partidos_bonitos(partidos)
+    # Asignar local/visitante (4 casa / 4 fuera)
+    partidos_finales = asignar_local_visitante(partidos_sin_orientar)
+
+    # Imprimir
+    print_partidos_bonitos(partidos_finales)
+    verificar_partidos(partidos_finales)
+    print_partidos_por_equipo_ordenados(partidos_finales)
+
 
 if __name__ == "__main__":
     main()

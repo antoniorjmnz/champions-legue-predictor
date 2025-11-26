@@ -1,94 +1,79 @@
 # constraints.py
-"""Comprobación de restricciones para decidir si se puede emparejar i con j."""
-
-from config import N_MATCHES, PER_POT, MAX_RIVALS_PER_COUNTRY
-from state import teams, adj, deg, pot_count
-
-
-def _forbid_same_country(i: int, j: int) -> bool:
-    """
-    Restricción 1:
-    - PROHÍBE que dos equipos del mismo país se enfrenten.
-    Ejemplo: Barça vs Real Madrid, USG vs Club Brugge, etc. NO permitidos.
-    """
-    return teams[i].country != teams[j].country
-
-
-def _limit_per_country(i: int, j: int) -> bool:
-    """
-    Restricción 2:
-    - Limita cuántos rivales puede tener un equipo de un MISMO país extranjero.
-      (p.ej. Barça contra italianos: Inter, Juve y Atalanta → máximo 3).
-
-    Implementación:
-    - Contamos, para i, cuántos rivales del país de j tiene ya.
-    - Contamos, para j, cuántos rivales del país de i tiene ya.
-    - Ambos deben estar por debajo de MAX_RIVALS_PER_COUNTRY.
-    """
-    ci = teams[i].country
-    cj = teams[j].country
-
-    # Si fueran del mismo país, ya lo bloquea _forbid_same_country
-    if ci == cj:
-        return True
-
-    # Cuenta cuántos rivales del país cj tiene i
-    count_i_cj = 0
-    for k in adj[i]:
-        if teams[k].country == cj:
-            count_i_cj += 1
-
-    if count_i_cj >= MAX_RIVALS_PER_COUNTRY:
-        return False
-
-    # Cuenta cuántos rivales del país ci tiene j
-    count_j_ci = 0
-    for k in adj[j]:
-        if teams[k].country == ci:
-            count_j_ci += 1
-
-    if count_j_ci >= MAX_RIVALS_PER_COUNTRY:
-        return False
-
-    return True
-
-
-def can_add_edge(i: int, j: int) -> bool:
-    """Devuelve True si se puede emparejar i con j sin romper ninguna restricción."""
-    if i == j:
-        return False
-
-    # Ya son rivales
-    if j in adj[i]:
-        return False
-
-    # Límite de 8 rivales por equipo
-    if deg[i] >= N_MATCHES or deg[j] >= N_MATCHES:
-        return False
-
-    # Límite de 2 rivales por bombo
-    pi, pj = teams[i].pot, teams[j].pot
-    if pot_count[i][pj] >= PER_POT:
-        return False
-    if pot_count[j][pi] >= PER_POT:
-        return False
-
-    # 1) Prohibir rivales del mismo país
-    if not _forbid_same_country(i, j):
-        return False
-
-    # 2) Limitar rivales de un mismo país extranjero (máx 3)
-    if not _limit_per_country(i, j):
-        return False
-
-    return True
-
+from state import teams, adj, deg, pot_count, country_count
+from config import N_MATCHES, PER_POT, MAX_SAME_COUNTRY
 
 def compute_candidates(i: int):
-    """Devuelve la lista de índices j que pueden ser rivales válidos de i."""
-    if deg[i] >= N_MATCHES:
-        return []
-    return [
-        j for j in range(len(teams))
-        if can_add_edge(i, j)
-    ]
+    """
+    Devuelve los candidatos válidos para emparejar con el equipo i
+    aplicando TODAS las restricciones:
+        ❌ no repetir rival
+        ❌ no exceder 8 rivales
+        ❌ no contra equipos del mismo país (regla Champions)
+        ❌ no exceder el límite por bombo
+        ❌ no crear conflicto con rivales futuros
+    """
+
+    candidates = []
+
+    ti = teams[i]
+    pot_i = ti.pot
+    country_i = ti.country
+
+    for j in range(len(teams)):
+        if j == i:
+            continue
+
+        # 1. ya son rivales → no permitido
+        if j in adj[i]:
+            continue
+
+        # 2. no sobrepasar 8 rivales
+        if deg[j] >= N_MATCHES:
+            continue
+
+        # 3. REGLA IMPORTANTE DEL PROFESOR:
+        #    NO SE PUEDE JUGAR CONTRA EQUIPOS DEL MISMO PAIS
+        if teams[j].country == country_i:
+            continue
+
+        # 4. no exceder rivales por bombo
+        pj = teams[j].pot
+        if pot_count[i][pj] >= PER_POT:
+            continue
+        if pot_count[j][pot_i] >= PER_POT:
+            continue
+
+        # 5. "forward checking" básico:
+        #    ambos equipos deben poder completar 8 rivales
+        restantes_i = N_MATCHES - deg[i]
+        restantes_j = N_MATCHES - deg[j]
+
+        # equipos aún disponibles sin país propio y sin sobrepasar bombo
+        posibles_i = sum(
+            1
+            for k in range(len(teams))
+            if k != i
+            and k not in adj[i]
+            and teams[k].country != country_i
+            and pot_count[i][teams[k].pot] < PER_POT
+        )
+
+        posibles_j = sum(
+            1
+            for k in range(len(teams))
+            if k != j
+            and k not in adj[j]
+            and teams[k].country != teams[j].country
+            and pot_count[j][teams[k].pot] < PER_POT
+        )
+
+        if posibles_i < restantes_i:
+            continue
+
+        if posibles_j < restantes_j:
+            continue
+
+        # candidato válido
+        candidates.append(j)
+
+    return candidates
